@@ -1,0 +1,130 @@
+<div id="home" class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><iframe class="video" src="https://player.vimeo.com/video/146656196?autoplay=0&amp;loop=0&amp;color=8D8292&amp;title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="collections" class="full-height background">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>COLLECTIONS</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+      <div class="col-md-4 marginTop50">
+        <div class="collections-img-wrapper mx-auto">
+          <%= image_tag 'test-collections.png' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="about" class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="col-4">
+        <%= image_tag 'profile.png' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          As far as I can remember, I have always loved creating and working with
+          my own hands. I could stayed confined in my bedroom for days to finish
+          any type of artistic projects. <br> I took multiple drawing and creation
+          design classes as I grew up, each one of them were enriching and
+          fulfilling . They made me realize that this is what I wanted to do, this
+          is what I wanted to be.
+        </p>
+        <p>
+          After four years studying in France I obtained a bachelor degree in Jewelry
+          Design. At "La SEPR Lyon", where I’ve learned the history of jewelry and
+          the transformation of the techniques through ages as well as studying and
+          using them for my own purpose. <br> What I love the most about Jewelry
+          is finding the inspiration in a lots of very different and unusual domain,
+          make it my own then retransform, mix ideas and theme before the realization
+          of the piece itself.<br> For about three years I have been experiencing,
+          discovering, self teaching and working in various field, trying to express
+          my own personality through jewelry creation.
+        </p>
+        <p>
+          Each piece of jewelry were design and hand made in New York by myself. <br>
+          And I finally present to you a part of my work.
+        </p>
+      </div>
+    </div>
+    <div class="row marginTop50 marginBottom50 align-items-center">
+      <div class="col-12">
+        <p>Who helped me with the video realisation?</p>
+      </div>
+      <div class="col-4">
+        <%= image_tag 'logo-vara.png', class: '' %>
+      </div>
+      <div class="col-2">
+        <%= image_tag 'logo-flora.jpg' %>
+      </div>
+      <div class="col">
+        <%= image_tag 'logo-rebecca.jpg' %>
+      </div>
+      <div class="col">
+        <%= image_tag 'logo-renan.png' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact" class="full-height background">
+  <div class="container">
+    <div class="row">
+      <h1>CONTACT</h1>
+    </div>
+    <div class="row">
+      <div class="col contact_form">
+        <%= form_tag('') do %>
+          <%= text_field_tag 'name', nil, placeholder: 'Type Your Name' %>
+          <%= text_area_tag 'message', nil, placeholder: 'Type A Short Message Here' %>
+          <%= email_field_tag 'email', nil, placeholder: 'Type Your Email' %>
+          <%= submit_tag 'SEND' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

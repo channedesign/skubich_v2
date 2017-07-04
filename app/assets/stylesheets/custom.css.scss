@@ -1,0 +1,250 @@
+@import "bootstrap";
+@font-face {
+  font-family: 'AvenirNext-regular';
+  src: font-url('AvenirNext-Regular.ttf');
+}
+
+body {
+  font-family: 'AvenirNext-regular';
+}
+
+h1 {
+  font-size: 55px;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 23px;
+}
+
+/*--------------------------------------------------*/
+/*                 Generals                         */
+/*--------------------------------------------------*/
+
+.custom-container {
+  padding-top: 100px;
+}
+
+.swiper-container {
+  height: 500px;
+  margin-top: 50px;
+  width: 800px;
+  .swiper-pagination {
+    z-index: 999999;
+  }
+}
+
+/*--------------------------------------------------*/
+/*                  Helpers                         */
+/*--------------------------------------------------*/
+
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.marginBottom50 {
+  margin-bottom: 50px;
+}
+
+.marginTop50 {
+  margin-top: 50px;
+}
+
+.video {
+  border: none;
+  height: 450px;
+  width: 100%;
+}
+
+/*--------------------------------------------------*/
+/*                  Navigation                      */
+/*--------------------------------------------------*/
+
+nav {
+  background-color: #fff !important;
+  height: 100px;
+  .navbar-brand, .navbar-nav {
+    // background: orange;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 10px;
+    width: 300px;
+  }
+  .navbar-nav {
+    // background: green;
+    font-size: 25px;
+    top: 50px;
+    width: 520px;
+  }
+}
+
+/*--------------------------------------------------*/
+/*                      Home                        */
+/*--------------------------------------------------*/
+
+#home {
+  background-image: image-url('background-1.jpg');
+}
+
+/*--------------------------------------------------*/
+/*                  Collections                     */
+/*--------------------------------------------------*/
+
+#collections {
+  background-image: image-url('background-2.png');
+  h1 {
+    margin-top: 100px;
+  }
+  .collections-img-wrapper {
+    border: 15px solid #fff;
+    width: 220px;
+    -webkit-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
+    -moz-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
+    box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
+  }
+}
+
+/*--------------------------------------------------*/
+/*                    About                         */
+/*--------------------------------------------------*/
+
+#about {
+  background-image: image-url('background-3.png');
+  h1 {
+    margin-top: 240px;
+  }
+  img {
+    margin-top: 100px;
+  }
+}
+
+/*--------------------------------------------------*/
+/*                    Contact                       */
+/*--------------------------------------------------*/
+
+#contact {
+  background-image: image-url('background-2.png');
+  h1 {
+    margin-top: 150px;
+  }
+//   .contact_form {
+//   position: relative;
+//   padding-top: 80px;
+//   line-height: 48px;
+//   font-size: 3em;
+// }
+//
+// .submit {
+//   height: 100px;
+//   width: 100px;
+//   border-radius: 100%;
+//   -moz-border-radius: 100%;
+//   -webkit-border-radius: 100%;
+//   position: relative;
+//   margin: 53px auto;
+//   color: #f5f5f5;
+//   -webkit-transition: 0.5s ease;
+//   -moz-transition: 0.5s ease;
+//   -ms-transition: 0.5s ease;
+//   -o-transition: 0.5s ease;
+//   transition: 0.5s ease;
+// }
+//
+// .submit:hover {
+//   color: #f5f5f5;
+// }
+//
+// .contact_form .btn {
+//   background: rgba(9,63,53, 0.8);
+//   border: 20px solid rgba(9,63,53, 0.7);
+// }
+//
+// .contact_form .btn:hover {
+//   background: rgba(26,2,37, 0.5);
+//   border: 1px solid rgba(26,2,37, 0.7);
+// }
+//
+// .form-inline div {
+//   display: inline-block;
+// }
+//
+// .form_input {
+//   color: rgba(26,2,37, 0.5);
+//   display: inline-block;
+//   border: none;
+//   border-radius: 0%;
+//   border-bottom: 1px dashed #505050;
+//   outline: none;
+// }
+//
+// #name_input {
+//   width: 340px;
+//   min-width: 340px;
+// }
+//
+// #text_input {
+//   position: relative;
+//   top: 30px;
+//   height: 55px;
+//   resize: none;
+//   width: 600px;
+//   min-width: 600px;
+// }
+//
+// #email_input {
+//   margin-top: 45px;
+//   width: 320px;
+//   min-width: 320px;
+// }
+//
+// .field_with_errors {
+//   input {
+//     border-bottom: 1px solid #b30000 ;
+//   }
+// }
+//
+// .error {
+//   font-size: 20px;
+//   color: #b30000;
+// }
+//
+// .alert {
+//   height: 20px;
+//   padding-bottom: -18px;
+//   background-color: white;
+//   border: none;
+// }
+}
+
+/*--------------------------------------------------*/
+/*                    Footer                        */
+/*--------------------------------------------------*/
+
+footer {
+  background-color: #878787;
+  color: #fff;
+  height: 70px;
+  position: relative;
+  p {
+    // background: green;
+    bottom: 0;
+    height: 30px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+  }
+}
