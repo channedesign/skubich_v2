@@ -128,7 +128,7 @@
     </div>
     <div class="row marginTop50">
       <div class="col text-center">
-        <%= form_tag('') do %>
+        <%= form_tag(send_email_path) do %>
         Hi Camille,<br><br>
         My name is <%= text_field_tag 'name', nil, placeholder: 'Type Your Name', class: 'form-input' %>
         and I'd like to <span class="dot-wrapper"><%= text_area_tag 'message', nil, placeholder: 'Type A Short Message Here', class: 'form-input form-textarea' %><span class="dot">.</span></span><br><br>

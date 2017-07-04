@@ -1,6 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    address: "email-smtp.us-east-1.amazonaws.com",
+    port: 587,
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["AWS_SES_USERNAME"],
+    password: ENV["AWS_SES_PASSWORD"]
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
