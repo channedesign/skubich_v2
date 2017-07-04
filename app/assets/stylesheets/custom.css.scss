@@ -1,15 +1,30 @@
 @import "bootstrap";
+// @import "font-awesome";
 @font-face {
   font-family: 'AvenirNext-regular';
   src: font-url('AvenirNext-Regular.ttf');
 }
 
+$purple: #4D004D;
+
 body {
   font-family: 'AvenirNext-regular';
+  font-size: 35px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: $purple;
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 75px;
 }
 
 img {
@@ -24,9 +39,9 @@ p {
 /*                 Generals                         */
 /*--------------------------------------------------*/
 
-.custom-container {
-  padding-top: 100px;
-}
+// .custom-container {
+//   margin-top: 130px;
+// }
 
 .swiper-container {
   height: 500px;
@@ -70,7 +85,7 @@ p {
 
 nav {
   background-color: #fff !important;
-  height: 100px;
+  height: 130px;
   .navbar-brand, .navbar-nav {
     // background: orange;
     left: 0;
@@ -79,14 +94,18 @@ nav {
     right: 0;
     text-align: center;
     top: 10px;
-    width: 300px;
+    width: 500px;
   }
   .navbar-nav {
     // background: green;
-    font-size: 25px;
-    top: 50px;
-    width: 520px;
+    font-size: 27px;
+    top: 80px;
+    width: 550px;
+    .nav-item.nav-link:hover {
+      color: $purple;
+    }
   }
+
 }
 
 /*--------------------------------------------------*/
@@ -95,6 +114,7 @@ nav {
 
 #home {
   background-image: image-url('background-1.jpg');
+  padding-top: 130px;
 }
 
 /*--------------------------------------------------*/
@@ -135,79 +155,47 @@ nav {
 
 #contact {
   background-image: image-url('background-2.png');
+  line-height: 48px;
   h1 {
     margin-top: 150px;
   }
-//   .contact_form {
-//   position: relative;
-//   padding-top: 80px;
-//   line-height: 48px;
-//   font-size: 3em;
-// }
-//
-// .submit {
-//   height: 100px;
-//   width: 100px;
-//   border-radius: 100%;
-//   -moz-border-radius: 100%;
-//   -webkit-border-radius: 100%;
-//   position: relative;
-//   margin: 53px auto;
-//   color: #f5f5f5;
-//   -webkit-transition: 0.5s ease;
-//   -moz-transition: 0.5s ease;
-//   -ms-transition: 0.5s ease;
-//   -o-transition: 0.5s ease;
-//   transition: 0.5s ease;
-// }
-//
-// .submit:hover {
-//   color: #f5f5f5;
-// }
-//
-// .contact_form .btn {
-//   background: rgba(9,63,53, 0.8);
-//   border: 20px solid rgba(9,63,53, 0.7);
-// }
-//
-// .contact_form .btn:hover {
-//   background: rgba(26,2,37, 0.5);
-//   border: 1px solid rgba(26,2,37, 0.7);
-// }
-//
-// .form-inline div {
-//   display: inline-block;
-// }
-//
-// .form_input {
-//   color: rgba(26,2,37, 0.5);
-//   display: inline-block;
-//   border: none;
-//   border-radius: 0%;
-//   border-bottom: 1px dashed #505050;
-//   outline: none;
-// }
-//
-// #name_input {
-//   width: 340px;
-//   min-width: 340px;
-// }
-//
-// #text_input {
-//   position: relative;
-//   top: 30px;
-//   height: 55px;
-//   resize: none;
-//   width: 600px;
-//   min-width: 600px;
-// }
-//
-// #email_input {
-//   margin-top: 45px;
-//   width: 320px;
-//   min-width: 320px;
-// }
-//
+  form {
+    margin-bottom: 100px;
+    .dot-wrapper {
+      position: relative;
+      .dot {
+        position: absolute;
+        bottom: -15px;
+      }
+    }
+    .form-input {
+      border: none;
+      border-bottom: 1px dashed #505050;
+      border-radius: 0%;
+      color: rgba(26,2,37, 0.5);
+      display: inline-block;
+      outline: none;
+      text-align: center;
+    }
+    .form-submit {
+      background: none;
+      border: none;
+      font-size: 50px;
+      margin-top: 100px;
+    }
+    .form-submit:hover {
+      color: $purple;
+      cursor: pointer;
+    }
+    .form-textarea {
+      height: 55px;
+      position: relative;
+      resize: none;
+      top: 30px;
+      width: 90%;
+    }
+  }
+
 // .field_with_errors {
 //   input {
 //     border-bottom: 1px solid #b30000 ;
