@@ -1,0 +1,5 @@
+<% if @message.valid? %>
+  $(".notice").html('Your message was sent successfully!');
+<% else %>
+  $(".notice").html('Your message was NOT sent!');
+<% end %>

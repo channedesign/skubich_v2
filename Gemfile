@@ -47,6 +47,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'capybara'
+  gem 'selenium-webdriver', '~>2.53.4'
 end
 
 group :development do
