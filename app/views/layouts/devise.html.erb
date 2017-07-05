@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SkubichV2</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id='devise'>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to(image_tag('logo-nav.png'), root_path, class: 'navbar-brand')  %>
+      <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div id="navbar" class="navbar-nav">
+          <%= link_to 'HOME', '#home', class: 'nav-item nav-link active' %>
+          <%= link_to 'COLLECTIONS', '#collections', class: 'nav-item nav-link' %>
+          <%= link_to 'ABOUT', '#about', class: 'nav-item nav-link' %>
+          <%= link_to 'CONTACT', '#contact', class: 'nav-item nav-link' %>
+        </div>
+      </div> -->
+    </nav>
+      <%= yield %>
+    <!-- <footer class="text-center">
+      <p>Site by <a href="http://www.channedesign.com" target="_blank">Channe</a> | &copy; Camille Skubich Jewelry</p>
+    </footer> -->
+  </body>
+</html>

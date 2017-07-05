@@ -14,18 +14,21 @@
     </div>
   </div>
 </div>
-<div id="collections" class="full-height background">
+<div id="collections" class="background">
   <div class="container">
     <div class="row">
       <div class="col">
         <h1>COLLECTIONS</h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row marginBottom100">
       <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
+        <%= link_to '' do %>
+          <div class="collections-img-wrapper mx-auto">
+            <%= image_tag 'test-collections.png' %>
+            <div class="collections-img-mask"></div>
+          </div>
+        <% end %>
       </div>
       <div class="col-md-3 marginTop50">
         <div class="collections-img-wrapper mx-auto">
@@ -72,10 +75,10 @@
         <h1>ABOUT</h1>
       </div>
       <div class="col-4">
-        <%= image_tag 'profile.png' %>
+        <%= image_tag 'profile.png', class: 'img-profile' %>
       </div>
     </div>
-    <div class="row">
+    <div class="row marginTop50">
       <div class="col">
         <p>
           As far as I can remember, I have always loved creating and working with
@@ -102,12 +105,12 @@
         </p>
       </div>
     </div>
-    <div class="row marginTop50 marginBottom50 align-items-center">
-      <div class="col-12">
+    <div class="row marginTop100 marginBottom100 align-items-center">
+      <div class="col-12 marginBottom50">
         <p>Who helped me with the video realization?</p>
       </div>
       <div class="col-4">
-        <%= image_tag 'logo-vara.png', class: '' %>
+        <%= image_tag 'logo-vara.png' %>
       </div>
       <div class="col-2">
         <%= image_tag 'logo-flora.jpg' %>

@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1 {
-  font-size: 75px;
+  font-size: 65px;
 }
 
 img {
@@ -69,8 +69,16 @@ p {
   margin-bottom: 50px;
 }
 
+.marginBottom100 {
+  margin-bottom: 100px;
+}
+
 .marginTop50 {
   margin-top: 50px;
+}
+
+.marginTop100 {
+  margin-top: 100px;
 }
 
 .video {
@@ -124,14 +132,30 @@ nav {
 #collections {
   background-image: image-url('background-2.png');
   h1 {
-    margin-top: 100px;
+    margin-top: 200px;
   }
   .collections-img-wrapper {
     border: 15px solid #fff;
+    position: relative;
     width: 220px;
     -webkit-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
     -moz-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
     box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
+    .collections-img-mask {
+      background-color: rgba(255, 255, 255, 0);
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%
+    }
+  }
+  .collections-img-wrapper:hover {
+    .collections-img-mask {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 
@@ -142,10 +166,11 @@ nav {
 #about {
   background-image: image-url('background-3.png');
   h1 {
-    margin-top: 240px;
+    margin-top: 250px;
   }
-  img {
-    margin-top: 100px;
+  .img-profile {
+    margin-top: 150px;
+    width: 80%;
   }
 }
 
@@ -157,7 +182,7 @@ nav {
   background-image: image-url('background-2.png');
   line-height: 48px;
   h1 {
-    margin-top: 150px;
+    margin-top: 200px;
   }
   form {
     margin-bottom: 100px;
@@ -234,5 +259,16 @@ footer {
     right: 0;
     top: 0;
     width: 500px;
+  }
+}
+
+/*--------------------------------------------------*/
+/*                    Devise                        */
+/*--------------------------------------------------*/
+
+#devise {
+  font-size: 20px;
+  h1 {
+    margin-top: 200px;
   }
 }
