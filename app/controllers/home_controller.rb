@@ -3,7 +3,17 @@ class HomeController < ApplicationController
   end
 
   def send_email
-    ContactMailer.send_email(name: params[:name], phone: params[:phone], email: params[:email], message: params[:message]).deliver
-    redirect_to root_url, notice: "Email sent!"
+    message_params = { name: params[:name], email: params[:email], message: params[:message] }
+    @message = Message.new(message_params)
+    if @message.valid?
+      ContactMailer.send_email(message_params).deliver
+      redirect_to root_url, notice: "Email sent!"
+    else
+      puts 'yoyoyoyoyoyoyoy'
+      redirect_to root_url, notice: "Email NOT sent!"
+    end
   end
+
+
+
 end
