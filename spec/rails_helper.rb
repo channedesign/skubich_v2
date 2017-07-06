@@ -69,4 +69,12 @@ RSpec.configure do |config|
   config.extend ControllerMacros, :type => :controller
   # To facilitate Capybara test (login_as)
   config.include Warden::Test::Helpers
+  # Create test_upload folder and rm it for file_attachment
+  include ActionDispatch::TestProcess
+  config.after(:all) do
+    if Rails.env.test?
+      test_uploads = Dir["#{Rails.root}/test_uploads"]
+      FileUtils.rm_rf(test_uploads)
+    end
+  end
 end

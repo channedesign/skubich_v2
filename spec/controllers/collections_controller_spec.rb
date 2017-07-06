@@ -23,9 +23,7 @@ RSpec.describe CollectionsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Collection. As you add validations to Collection, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) { attributes_for :collection }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
@@ -35,6 +33,9 @@ RSpec.describe CollectionsController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # CollectionsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  login_admin
+
 
   describe "GET #index" do
     it "assigns all collections as @collections" do
