@@ -8,6 +8,8 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'devise'
+require_relative 'support/controller_macros'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -62,6 +64,9 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
-  # # To facilitate Capybara test (login_as)
-  # config.include Warden::Test::Helpers
+  # Devise
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
+  # To facilitate Capybara test (login_as)
+  config.include Warden::Test::Helpers
 end
