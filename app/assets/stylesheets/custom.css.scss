@@ -81,6 +81,11 @@ p {
   margin-top: 100px;
 }
 
+.notice {
+  position: relative;
+  z-index: 999999;
+}
+
 .video {
   border: none;
   height: 450px;

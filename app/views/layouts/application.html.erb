@@ -9,6 +9,8 @@
   </head>
 
   <body data-spy="scroll" data-target="#navbar" data-offset="100">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,6 +25,7 @@
         </div>
       </div>
     </nav>
+
       <%= yield %>
     <footer class="text-center">
       <p>Site by <a href="http://www.channedesign.com" target="_blank">Channe</a> | &copy; Camille Skubich Jewelry</p>

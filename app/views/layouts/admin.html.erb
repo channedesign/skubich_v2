@@ -17,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div id="navbar" class="navbar-nav">
           <%= link_to 'Website', root_path, class: 'nav-item nav-link' %>
-          <%= link_to 'LogOut', root_path, class: 'nav-item nav-link' %>
+          <%= link_to 'LogOut', destroy_admin_session_path, method: :delete, class: 'nav-item nav-link' %>
         </div>
       </div>
     </nav>
