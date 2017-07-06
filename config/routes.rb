@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :collections
   root 'home#index'
   post 'home/send_email', to: 'home#send_email', as: :send_email
 
