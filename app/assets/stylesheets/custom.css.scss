@@ -35,6 +35,10 @@ p {
   font-size: 23px;
 }
 
+ul {
+  list-style: none;
+}
+
 /*--------------------------------------------------*/
 /*                 Generals                         */
 /*--------------------------------------------------*/
@@ -55,6 +59,17 @@ p {
 /*--------------------------------------------------*/
 /*                  Helpers                         */
 /*--------------------------------------------------*/
+
+.add-button {
+  border: 1px dashed #000;
+  height: 100px;
+  padding: 40px;
+  width: 300px;
+}
+.add-button:hover {
+  background-color: #fff;
+  border: 1px solid #000;
+}
 
 .background {
   background-repeat: no-repeat;
@@ -289,6 +304,9 @@ footer {
     height: 100vh;
     position: fixed;
     width: 200px;
+    ul {
+      margin-top: 200px;
+    }
   }
   .container {
     margin-top: 130px;

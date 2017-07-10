@@ -84,7 +84,7 @@ RSpec.describe CollectionsController, type: :controller do
 
       it "redirects to the created collection" do
         post :create, params: {collection: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Collection.last)
+        expect(response).to redirect_to(collections_path)
       end
     end
 

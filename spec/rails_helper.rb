@@ -9,6 +9,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'devise'
+require 'database_cleaner'
 require_relative 'support/controller_macros'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -75,6 +76,17 @@ RSpec.configure do |config|
     if Rails.env.test?
       test_uploads = Dir["#{Rails.root}/test_uploads"]
       FileUtils.rm_rf(test_uploads)
+    end
+  end
+  # database_cleaner
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
     end
   end
 end

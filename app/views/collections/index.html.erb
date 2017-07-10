@@ -3,13 +3,14 @@
     <h1>Collections</h1>
   </div>
 </div>
-<div class="row text-center">
-  <div class="col-12">
-    <%= link_to 'New Collection', new_collection_path %>
+<div class="row text-center marginTop50">
+  <div class="col-12 marginBottom50">
+    <%= link_to 'Add New Collection', new_collection_path, class: 'add-button' %>
   </div>
   <% @collections.each do |collection| %>
     <div class="col-3 marginTop50">
       <%= link_to collection do %>
+        <%= collection.name %>
         <div class="collections-img-wrapper mx-auto">
           <%= image_tag collection.picture.url %>
           <div class="collections-img-mask"></div>
