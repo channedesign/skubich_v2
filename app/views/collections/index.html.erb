@@ -8,7 +8,7 @@
     <%= link_to 'Add New Collection', new_collection_path, class: 'add-button' %>
   </div>
   <% @collections.each do |collection| %>
-    <div class="col-3 marginTop50">
+    <div class="col-3 marginTop50 collection-wrapper-div">
       <%= link_to collection do %>
         <%= collection.name %>
         <div class="collections-img-wrapper mx-auto">
