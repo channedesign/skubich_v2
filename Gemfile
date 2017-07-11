@@ -40,6 +40,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
+gem 'jquery-ui-rails'
 # gem "font-awesome-rails"
 
 group :development, :test do

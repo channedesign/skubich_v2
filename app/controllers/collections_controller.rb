@@ -1,6 +1,7 @@
 class CollectionsController < ApplicationController
   layout 'admin'
   before_action :authenticate_admin!
+  skip_before_action :verify_authenticity_token, only: :sort
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
 
   # GET /collections
@@ -62,7 +63,15 @@ class CollectionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
+  end
+
+  def sort
+    params[:collection].each_with_index do |id, index|
+      Collection.where(id: id).update_all({position: index + 1})
+    end
+    render nothing: true
   end
 
   private

@@ -7,5 +7,9 @@ $(document).ready(function() {
    paginationClickable: true,
  })
 
-
+ $(".sortable").sortable({
+		 update: function() {
+			 $.post($(this).data("update-url"), $(this).sortable('serialize'))
+		 }
+	 });
 });

@@ -6,6 +6,9 @@
 }
 
 $purple: #4D004D;
+$dark-green: #093f35;
+$light-red: #F2DEDE;
+$light-green: #DFF0D8;
 
 body {
   font-family: 'AvenirNext-regular';
@@ -61,19 +64,34 @@ ul {
 /*--------------------------------------------------*/
 
 .add-button {
-  border: 1px dashed #000;
+  border: 1px dashed $dark-green;
   height: 100px;
   padding: 40px;
   width: 300px;
 }
 .add-button:hover {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid $dark-green;
 }
 
 .background {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.box {
+  border: 1px dashed $dark-green;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.box-green {
+  background-color: $light-green;
+}
+
+.box-red {
+  background-color: $light-red;
 }
 
 .btn-custom {
@@ -82,6 +100,15 @@ ul {
   color: #000;
   font-size: 18px;
   padding: 8px 20px;
+}
+
+.btn-outline-info {
+  border-color: $purple;
+  color: $purple;
+}
+.btn-outline-info:hover {
+  background-color: $purple;
+  border-color: $purple;
 }
 
 .collections-img-wrapper {
@@ -338,6 +365,9 @@ footer {
     opacity: 0;
     position: absolute;
     top: 0;
+  }
+  #collection-index {
+
   }
 }
 

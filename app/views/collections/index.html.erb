@@ -1,23 +1,26 @@
-<div class="row text-center">
+<div id="collection-index" class="row text-center">
   <div class="col">
     <h1>Collections</h1>
   </div>
 </div>
-<div class="row text-center marginTop50">
+<div class="row text-center marginTop50 marginBottom50">
   <div class="col-12 marginBottom50">
     <%= link_to 'Add New Collection', new_collection_path, class: 'add-button' %>
   </div>
-  <% @collections.each do |collection| %>
-    <div id="collection-<%= collection.id %>" class="col-3 marginTop50 collection-wrapper-div">
-      <%= link_to collection do %>
-        <%= collection.name %>
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag collection.picture.url %>
-          <div class="collections-img-mask"></div>
-        </div>
-      <% end %>
-      <%= link_to 'Edit', edit_collection_path(collection) %> |
-      <%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
+  <div class="sortable row" data-update-url="<%= sort_collections_path %>">
+    <% @collections.each do |collection| %>
+      <div id="collection-<%= collection.id %>" class="col-3 collection-wrapper-div box <%= collection.visible? ? 'box-green' : 'box-red' %>">
+        <%= link_to collection do %>
+          <%= collection.name %>
+          <div class="collections-img-wrapper mx-auto">
+            <%= image_tag collection.picture.url %>
+            <div class="collections-img-mask"></div>
+          </div>
+        <% end %>
+        <br>
+        <%= link_to 'Edit', edit_collection_path(collection), class: 'btn btn-outline-info' %> |
+        <%= link_to 'Delete', collection, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger', remote: true %>
+      </div>
+    <% end %>
+  </div>
 </div>

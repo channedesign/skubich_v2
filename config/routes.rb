@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   devise_for :admins
   get 'admin', to: 'admin_section#index'
   scope 'admin' do
-    resources :collections
+    resources :collections do
+      collection { post :sort }
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
