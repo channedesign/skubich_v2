@@ -53,6 +53,8 @@ class CollectionsController < ApplicationController
     end
   end
 
+
+
   # DELETE /collections/1
   # DELETE /collections/1.json
   def destroy

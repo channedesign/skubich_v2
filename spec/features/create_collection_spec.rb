@@ -14,7 +14,7 @@ feature 'Add A New Collection' do
 
     within 'form' do
       fill_in 'Name', with: 'Collection Name'
-      attach_file('Picture', File.absolute_path("#{Rails.root}/spec/support/images/image.jpg"))
+      attach_file('collection_picture', File.absolute_path("#{Rails.root}/spec/support/images/image.jpg"))
       click_button 'Create Collection'
     end
 

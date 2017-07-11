@@ -6,4 +6,6 @@ $(document).ready(function() {
    pagination: '.swiper-pagination',
    paginationClickable: true,
  })
+
+
 });

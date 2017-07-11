@@ -76,6 +76,14 @@ ul {
   background-size: cover;
 }
 
+.btn-custom {
+  background-color: white;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 18px;
+  padding: 8px 20px;
+}
+
 .collections-img-wrapper {
   border: 15px solid #fff;
   position: relative;
@@ -313,6 +321,23 @@ footer {
   }
   .custom-container {
     padding-left: 200px;
+  }
+  .form-img {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+  .upload-btn-wrapper {
+    display: inline-block;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
   }
 }
 
