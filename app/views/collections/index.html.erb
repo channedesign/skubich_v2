@@ -4,10 +4,10 @@
   </div>
 </div>
 <div class="row text-center marginTop50 marginBottom50">
-  <div class="col-12 marginBottom50">
+  <div class="col-12">
     <%= link_to 'Add New Collection', new_collection_path, class: 'add-button' %>
-  </div>
-  <div class="sortable row" data-update-url="<%= sort_collections_path %>">
+
+  <div class="sortable row marginTop50" data-update-url="<%= sort_collections_path %>">
     <% @collections.each do |collection| %>
       <div id="collection-<%= collection.id %>" class="col-3 collection-wrapper-div box <%= collection.visible? ? 'box-green' : 'box-red' %>">
         <%= link_to collection do %>
@@ -25,5 +25,6 @@
         <p class="current-status">Current Status: <%= link_to(collection.visible? ? 'Visible' : 'Not Visible', collection_path(collection.id, collection: { visible: collection.visible? ? false : true }), class: 'visibility-link', remote: true, method: :put) %></p>
       </div>
     <% end %>
+  </div>
   </div>
 </div>

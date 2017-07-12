@@ -13,7 +13,7 @@ $light-green: #DFF0D8;
 body {
   font-family: 'AvenirNext-regular';
   font-size: 35px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   position: relative;
 }
 
@@ -83,7 +83,7 @@ ul {
   border: 1px dashed $dark-green;
   padding-bottom: 0px;
   padding-top: 20px;
-  width: 100%;
+  // width: 100%;
 }
 
 .box-green {
