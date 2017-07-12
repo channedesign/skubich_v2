@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @jewelry.name %>
+</p>
+
+<p>
+  <strong>Inspiration:</strong>
+  <%= @jewelry.inspiration %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @jewelry.material %>
+</p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @jewelry.visible %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @jewelry.position %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @jewelry.picture %>
+</p>
+
+<p>
+  <strong>Collection:</strong>
+  <%= @jewelry.collection %>
+</p>
+
+<%= link_to 'Edit', edit_jewelry_path(@jewelry) %> |
+<%= link_to 'Back', jewelries_path %>
