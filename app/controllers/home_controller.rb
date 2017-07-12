@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @collections = Collection.where(visible: true).order(:position)
   end
 
   def send_email

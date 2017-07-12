@@ -47,6 +47,7 @@ class CollectionsController < ApplicationController
       if @collection.update(collection_params)
         format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @collection.errors, status: :unprocessable_entity }

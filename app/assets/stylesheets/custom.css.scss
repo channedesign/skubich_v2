@@ -81,7 +81,7 @@ ul {
 
 .box {
   border: 1px dashed $dark-green;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   padding-top: 20px;
   width: 100%;
 }
@@ -126,17 +126,42 @@ ul {
     position: absolute;
     right: 0;
     top: 0;
-    width: 100%
+    width: 100%;
+  }
+  .collection-name {
+    bottom: 0;
+    height: 30px;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
   }
 }
-.collections-img-wrapper:hover {
-  .collections-img-mask {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+// .collections-img-wrapper:hover {
+//   .collections-img-mask {
+//     background-color: rgba(255, 255, 255, 0.5);
+//   }
+// }
+
+.custom-container {
+	position: relative;
+	z-index: 3;
+}
+
+.parallax-bg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+	z-index: 2;
 }
 
 .full-height {
-  height: 100vh;
+  height: 85vh;
 }
 
 .marginBottom50 {
@@ -173,6 +198,9 @@ ul {
 nav {
   background-color: #fff !important;
   height: 130px;
+  -webkit-box-shadow: 0px 10px 22px -1px rgba(143,141,143,0.5);
+  -moz-box-shadow: 0px 10px 22px -1px rgba(143,141,143,0.5);
+  box-shadow: 0px 10px 22px -1px rgba(143,141,143,0.5);
   .navbar-brand, .navbar-nav {
     // background: orange;
     left: 0;
@@ -202,6 +230,7 @@ nav {
 #home {
   background-image: image-url('background-1.jpg');
   padding-top: 130px;
+
 }
 
 /*--------------------------------------------------*/
@@ -213,7 +242,6 @@ nav {
   h1 {
     margin-top: 200px;
   }
-
 }
 
 /*--------------------------------------------------*/
@@ -346,7 +374,10 @@ footer {
   .container {
     margin-top: 130px;
   }
-  .custom-container {
+  .current-status {
+    font-size: 12px;
+  }
+  .custom-container-admin {
     padding-left: 200px;
   }
   .form-img {
@@ -365,6 +396,9 @@ footer {
     opacity: 0;
     position: absolute;
     top: 0;
+  }
+  .visibility-link {
+    text-decoration: underline;
   }
   #collection-index {
 

@@ -20,6 +20,9 @@
         <br>
         <%= link_to 'Edit', edit_collection_path(collection), class: 'btn btn-outline-info' %> |
         <%= link_to 'Delete', collection, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger', remote: true %>
+        <br>
+        <br>
+        <p class="current-status">Current Status: <%= link_to(collection.visible? ? 'Visible' : 'Not Visible', collection_path(collection.id, collection: { visible: collection.visible? ? false : true }), class: 'visibility-link', remote: true, method: :put) %></p>
       </div>
     <% end %>
   </div>

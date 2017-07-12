@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body data-spy="scroll" data-target="#navbar" data-offset="100">
+  <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-faded">
@@ -19,9 +19,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div id="navbar" class="navbar-nav">
           <%= link_to 'HOME', '#home', class: 'nav-item nav-link active' %>
-          <%= link_to 'COLLECTIONS', '#collections', class: 'nav-item nav-link' %>
-          <%= link_to 'ABOUT', '#about', class: 'nav-item nav-link' %>
-          <%= link_to 'CONTACT', '#contact', class: 'nav-item nav-link' %>
+          <%= link_to 'COLLECTIONS', '#collections', class: 'nav-item nav-link active' %>
+          <%= link_to 'ABOUT', '#about', class: 'nav-item nav-link active' %>
+          <%= link_to 'CONTACT', '#contact', class: 'nav-item nav-link active' %>
         </div>
       </div>
     </nav>

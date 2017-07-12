@@ -1,0 +1,6 @@
+$("#collection-<%= @collection.id %> .current-status").html("Current Status: <%=j link_to(@collection.visible? ? 'Visible' : 'Not Visible', collection_path(@collection.id, collection: { visible: @collection.visible? ? false : true }), class: 'visibility-link', remote: true, method: :put) %>")
+<% if @collection.visible? %>
+  $("#collection-<%= @collection.id %>").removeClass('box-red').addClass('box-green')
+<% else %>
+  $("#collection-<%= @collection.id %>").removeClass('box-green').addClass('box-red')
+<% end %>

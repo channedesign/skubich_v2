@@ -1,5 +1,5 @@
-<div id="home" class="background">
-  <div class="container">
+<div id="home" class="background full-height">
+  <div class="container parallax-bg">
     <div class="row">
       <div class="col">
         <div class="swiper-container">
@@ -14,7 +14,7 @@
     </div>
   </div>
 </div>
-<div id="collections" class="background">
+<div id="collections" class="background custom-container">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -22,49 +22,18 @@
       </div>
     </div>
     <div class="row marginBottom100">
-      <div class="col-md-3 marginTop50">
-        <%= link_to '' do %>
-          <div class="collections-img-wrapper mx-auto">
-            <%= image_tag 'test-collections.png' %>
-            <div class="collections-img-mask"></div>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
+      <% @collections.each do |collection| %>
+        <div class="col-md-3 marginTop50">
+          <%= link_to '' do %>
+            <div class="collections-img-wrapper mx-auto">
+              <%= image_tag collection.picture.url %>
+              <div class="collections-img-mask"></div>
+              <p class="collection-name text-center"><%= collection.name %></p>
+
+            </div>
+          <% end %>
         </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
-      <div class="col-md-3 marginTop50">
-        <div class="collections-img-wrapper mx-auto">
-          <%= image_tag 'test-collections.png' %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
