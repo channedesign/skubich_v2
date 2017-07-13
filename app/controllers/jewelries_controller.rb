@@ -60,6 +60,7 @@ class JewelriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to jewelries_url, notice: 'Jewelry was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
