@@ -27,8 +27,8 @@
             <td><%= jewelry.inspiration %></td>
             <td><%= jewelry.material %></td>
             <td><%= jewelry.collection.name %></td>
-            <td><%= jewelry.visible? ? 'Yes' : 'No' %></td>
-            <td><%= link_to 'View', jewelry %></td>
+            <td class="visible-column <%= jewelry.visible? ? 'box-green' : 'box-red' %>"><%= link_to jewelry.visible? ? 'Yes' : 'No', jewelry_path(jewelry, jewelry: { visible: jewelry.visible? ? 'false' : 'true' }), class: 'toggle-visibility', method: :put, remote: true %></td>
+            <td><%= link_to 'View', jewelry, class: 'btn btn-outline-success' %></td>
             <td><%= link_to 'Edit', edit_jewelry_path(jewelry), class: 'btn btn-outline-info' %></td>
             <td><%= link_to 'Delete', jewelry, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger', remote: true %></td>
           </tr>

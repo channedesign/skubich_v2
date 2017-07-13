@@ -111,6 +111,15 @@ ul {
   border-color: $purple;
 }
 
+.btn-outline-success {
+  border-color: $dark-green;
+  color: $dark-green;
+}
+.btn-outline-success:hover {
+  background-color: $dark-green;
+  border-color: $dark-green;
+}
+
 .collections-img-wrapper {
   border: 15px solid #fff;
   position: relative;
