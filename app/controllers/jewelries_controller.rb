@@ -44,7 +44,7 @@ class JewelriesController < ApplicationController
   def update
     respond_to do |format|
       if @jewelry.update(jewelry_params)
-        format.html { redirect_to @jewelry, notice: 'Jewelry was successfully updated.' }
+        format.html { redirect_to jewelries_path, notice: 'Jewelry was successfully updated.' }
         format.json { render :show, status: :ok, location: @jewelry }
       else
         format.html { render :edit }

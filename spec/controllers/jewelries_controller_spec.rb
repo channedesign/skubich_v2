@@ -121,7 +121,7 @@ RSpec.describe JewelriesController, type: :controller do
       it "redirects to the jewelry" do
         jewelry = Jewelry.create! valid_attributes
         put :update, params: {id: jewelry.to_param, jewelry: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(jewelry)
+        expect(response).to redirect_to(jewelries_path)
       end
     end
 

@@ -21,7 +21,7 @@
 
       <tbody>
         <% @jewelries.each do |jewelry| %>
-          <tr>
+          <tr id="jewelry-<%= jewelry.id %>">
             <td><%= jewelry.name %></td>
             <td><%= image_tag jewelry.picture.url(:thumb) %></td>
             <td><%= jewelry.inspiration %></td>
