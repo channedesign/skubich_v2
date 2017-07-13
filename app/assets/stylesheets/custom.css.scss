@@ -352,6 +352,7 @@ footer {
 /*--------------------------------------------------*/
 
 #admin {
+  $sidebar-width: 200px;
   background: rgba(0, 0, 0, 0.1);
   font-size: 18px;
   nav {
@@ -361,14 +362,42 @@ footer {
       width: 230px;
     }
   }
+  table {
+    th {
+      text-align: center;
+    }
+    td {
+      vertical-align: middle;
+    }
+  }
   .admin-side-bar {
     background: #fff;
     border-right: 1px solid #000;
     height: 100vh;
     position: fixed;
-    width: 200px;
+    width: $sidebar-width;
     ul {
-      margin-top: 200px;
+      padding: 0;
+      position: relative;
+      top: 30%;
+      li {
+        padding: 0 !important;
+        a {
+          border: 1px dashed $dark-green;
+          border-left: none;
+          border-right: none;
+          display: block;
+          padding-bottom: 15px;
+          padding-left: 10px;
+          padding-top: 15px;
+          width: 100%;
+        }
+        a:hover {
+          background-color: $dark-green;
+          border: 1px solid #000;
+          color: #fff;
+        }
+      }
     }
   }
   .container {
@@ -378,7 +407,15 @@ footer {
     font-size: 12px;
   }
   .custom-container-admin {
-    padding-left: 200px;
+    padding-left: $sidebar-width;
+  }
+  .form-check {
+    input {
+      margin-left: 20px;
+    }
+    label {
+      margin-left: 5px;
+    }
   }
   .form-img {
     width: 300px;

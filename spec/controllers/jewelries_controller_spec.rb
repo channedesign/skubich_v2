@@ -82,7 +82,7 @@ RSpec.describe JewelriesController, type: :controller do
 
       it "redirects to the created jewelry" do
         post :create, params: {jewelry: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Jewelry.last)
+        expect(response).to redirect_to(jewelries_path)
       end
     end
 

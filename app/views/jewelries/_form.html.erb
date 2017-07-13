@@ -13,44 +13,44 @@
           </ul>
         </div>
       <% end %>
-
-          <div class="form-group">
+      <div class="row text-center">
+          <div class="form-group col-12">
             <%= form.label :name %>
-        <%= form.text_field :name, id: :jewelry_name, class: 'form-control' %>
+            <%= form.text_field :name, id: :jewelry_name, class: 'form-control' %>
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-6">
             <%= form.label :inspiration %>
-        <%= form.text_field :inspiration, id: :jewelry_inspiration, class: 'form-control' %>
+            <%= form.text_field :inspiration, id: :jewelry_inspiration, class: 'form-control' %>
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-6">
             <%= form.label :material %>
-        <%= form.text_field :material, id: :jewelry_material, class: 'form-control' %>
+            <%= form.text_field :material, id: :jewelry_material, class: 'form-control' %>
           </div>
 
-          <div class="form-group">
-            <%= form.label :visible %>
-        <%= form.check_box :visible, id: :jewelry_visible, class: 'form-control' %>
+
+
+          <% if jewelry.picture? %>
+            <div class="col-6 mx-auto">
+              <%= image_tag jewelry.picture.url, class: 'form-img' %>
+            </div>
+          <% end %>
+          <div class="form-group col upload-btn-wrapper">
+            <button class="btn btn-custom"><%= jewelry.picture? ? 'Upload Different Picture' : 'Upload Picture' %></button>
+            <%= form.file_field :picture, id: :jewelry_picture %>
           </div>
 
-          <div class="form-group">
-            <%= form.label :position %>
-        <%= form.number_field :position, id: :jewelry_position, class: 'form-control' %>
+          <div class="form-group col-12">
+            <div class="form-check">
+              <%= form.label :collection_id %><br>
+              <%= form.collection_radio_buttons :collection_id, Collection.all, :id, :name %>
+            </div>
           </div>
 
-          <div class="form-group">
-            <%= form.label :picture %>
-        <%= form.text_field :picture, id: :jewelry_picture, class: 'form-control' %>
+          <div class="actions mx-auto">
+            <%= form.submit class: 'btn btn-secondary' %>
           </div>
-
-          <div class="form-group">
-            <%= form.label :collection_id %>
-        <%= form.text_field :collection_id, id: :jewelry_collection_id, class: 'form-control' %>
-          </div>
-
-          <div class="actions">
-        <%= form.submit class: 'btn btn-secondary' %>
       </div>
     <% end %>
   </div>

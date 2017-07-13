@@ -6,7 +6,7 @@ class JewelriesController < ApplicationController
   # GET /jewelries
   # GET /jewelries.json
   def index
-    @jewelries = Jewelry.all
+    @jewelries = Jewelry.order(:position).includes(:collection)
   end
 
   # GET /jewelries/1
@@ -30,7 +30,7 @@ class JewelriesController < ApplicationController
 
     respond_to do |format|
       if @jewelry.save
-        format.html { redirect_to @jewelry, notice: 'Jewelry was successfully created.' }
+        format.html { redirect_to jewelries_path, notice: 'Jewelry was successfully created.' }
         format.json { render :show, status: :created, location: @jewelry }
       else
         format.html { render :new }

@@ -1,39 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div id="jewelry-index" class="row text-center">
+  <div class="col-12">
+    <h1>Jewelries</h1>
+  </div>
+  <div class="col-12 marginTop50">
+    <%= link_to 'Add New Jewelry', new_jewelry_path, class: 'add-button' %>
+  </div>
+  <div class="col-12 marginTop50">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Picture</th>
+          <th>Inspiration</th>
+          <th>Material</th>
+          <th>Collection</th>
+          <th>Visible</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
 
-<h1>Jewelries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Inspiration</th>
-      <th>Material</th>
-      <th>Visible</th>
-      <th>Position</th>
-      <th>Picture</th>
-      <th>Collection</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jewelries.each do |jewelry| %>
-      <tr>
-        <td><%= jewelry.name %></td>
-        <td><%= jewelry.inspiration %></td>
-        <td><%= jewelry.material %></td>
-        <td><%= jewelry.visible %></td>
-        <td><%= jewelry.position %></td>
-        <td><%= jewelry.picture %></td>
-        <td><%= jewelry.collection %></td>
-        <td><%= link_to 'Show', jewelry %></td>
-        <td><%= link_to 'Edit', edit_jewelry_path(jewelry) %></td>
-        <td><%= link_to 'Destroy', jewelry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Jewelry', new_jewelry_path %>
+      <tbody>
+        <% @jewelries.each do |jewelry| %>
+          <tr>
+            <td><%= jewelry.name %></td>
+            <td><%= image_tag jewelry.picture.url(:thumb) %></td>
+            <td><%= jewelry.inspiration %></td>
+            <td><%= jewelry.material %></td>
+            <td><%= jewelry.collection.name %></td>
+            <td><%= jewelry.visible? ? 'Yes' : 'No' %></td>
+            <td><%= link_to 'View', jewelry %></td>
+            <td><%= link_to 'Edit', edit_jewelry_path(jewelry), class: 'btn btn-outline-info' %></td>
+            <td><%= link_to 'Delete', jewelry, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger', remote: true %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
