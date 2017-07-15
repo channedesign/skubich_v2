@@ -16,4 +16,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require tween_max.min
+//= require ScrollMagic.min
+//= require animation.gsap.min
 //= require_tree .

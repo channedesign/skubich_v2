@@ -21,15 +21,14 @@
         <h1>COLLECTIONS</h1>
       </div>
     </div>
-    <div class="row marginBottom100">
+    <div class="row marginBottom100 parallax-element-detected">
       <% @collections.each do |collection| %>
-        <div class="col-md-3 marginTop50">
+        <div class="col-md-3 marginTop50 parallax-element">
           <%= link_to jewelries_pages_path(anchor: collection.name) do %>
             <div class="collections-img-wrapper mx-auto">
               <%= image_tag collection.picture.url %>
               <div class="collections-img-mask"></div>
               <p class="collection-name text-center"><%= collection.name %></p>
-
             </div>
           <% end %>
         </div>
@@ -47,9 +46,9 @@
         <h1>ABOUT</h1>
       </div>
     </div>
-    <div class="row marginTop50">
+    <div class="row marginTop50 parallax-element-detected">
       <div class="col">
-        <p>
+        <p class="parallax-element">
           As far as I can remember, I have always loved creating and working with
           my own hands. I could stayed confined in my bedroom for days to finish
           any type of artistic projects. <br> I took multiple drawing and creation
@@ -57,7 +56,7 @@
           fulfilling . They made me realize that this is what I wanted to do, this
           is what I wanted to be.
         </p>
-        <p>
+        <p class="parallax-element">
           After four years studying in France I obtained a bachelor degree in Jewelry
           Design. At "La SEPR Lyon", where I’ve learned the history of jewelry and
           the transformation of the techniques through ages as well as studying and
@@ -68,7 +67,7 @@
           discovering, self teaching and working in various field, trying to express
           my own personality through jewelry creation.
         </p>
-        <p>
+        <p class="parallax-element">
           Each piece of jewelry were design and hand made in New York by myself. <br>
           And I finally present to you a part of my work.
         </p>
@@ -76,7 +75,7 @@
     </div>
     <div class="row marginTop100 marginBottom100 align-items-center">
       <div class="col-12 marginBottom50">
-        <p>Who helped me with the video realization?</p>
+        <p class="parallax-element">Who helped me with the video realization?</p>
       </div>
       <div class="col-4">
         <%= image_tag 'logo-vara.png' %>

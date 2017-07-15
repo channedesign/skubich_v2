@@ -47,9 +47,9 @@ class JewelriesController < ApplicationController
       if @jewelry.update(jewelry_params)
         format.html { redirect_to jewelries_path, notice: 'Jewelry was successfully updated.' }
         format.json { render :show, status: :ok, location: @jewelry }
+        format.js
       else
         format.html { render :edit }
-        format.json { render json: @jewelry.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,7 +69,6 @@ class JewelriesController < ApplicationController
     params[:jewelry].each_with_index do |id, index|
       Jewelry.where(id: id).update_all({position: index + 1})
     end
-    # render nothing: true
     respond_to do |format|
       format.js
     end

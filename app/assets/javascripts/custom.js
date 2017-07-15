@@ -28,117 +28,74 @@ $(document).on('turbolinks:load', function() {
   })();
   // Simple Background Parallax Scene
   (function() {
-    // var parallaxBG1 = $(".parallax-bg-1");
-    // var parallaxBG2 = $(".parallax-bg-2");
     var parallaxBGs = $.find(".parallax-bg");
     var parallaxBGs2 = $.find(".parallax-bg-2");
     var $tm = TweenMax;
-    var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-               navigator.userAgent && !navigator.userAgent.match('CriOS');
-    // if(!isSafari) {
+    // var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+    //            navigator.userAgent && !navigator.userAgent.match('CriOS');
 
 
-      parallaxBGs.forEach(function(bgs, index) {
-        var num = index + 1;
-        $(bgs).addClass("parallax-bg-" + num)
-        $(bgs).parent().addClass("parallax-bg-anchor" + num)
-        var parallax = $tm.to($(".parallax-bg-" + num), 1, { y: '50%', ease: Power2.easeOut });
-        var slideParallaxScene = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-anchor" + num, duration: "100%", triggerHook: 0.2 })
-                  .setTween(parallax)
-                  .addTo(animController);
-      });
+    parallaxBGs.forEach(function(bgs, index) {
+      var num = index + 1;
+      $(bgs).addClass("parallax-bg-" + num)
+      $(bgs).parent().addClass("parallax-bg-anchor" + num)
+      var parallax = $tm.to($(".parallax-bg-" + num), 1, { y: '50%', ease: Power2.easeOut });
+      var slideParallaxScene = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-anchor" + num, duration: "100%", triggerHook: 0.2 })
+                .setTween(parallax)
+                .addTo(animController);
+    });
 
-      parallaxBGs2.forEach(function(bgs, index) {
-        var num = index + 1;
-        $(bgs).addClass("parallax-bg-2-" + num)
-        $(bgs).parent().addClass("parallax-bg-2-anchor" + num)
-        var parallaxIn = $tm.from($(".parallax-bg-2-" + num), 1, { y: '30%' });
-        var parallaxOut = $tm.to($(".parallax-bg-2-" + num), 1, { y: '-30%' });
-        var slideParallaxSceneIn = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 1 })
-                  .setTween(parallaxIn)
-                  .addTo(animController);
-        var slideParallaxSceneOut = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 0 })
-                  .setTween(parallaxOut)
-                  .addTo(animController);
-      });
-      // var parallax1 = $tm.to(parallaxBG1, 1, { y: '50%', ease: Power1.easeOut });
-      // var parallax2 = $tm.from(parallaxBG2, 1, { y: '-40%', ease: Power1.easeInOut });
-      // var parallax2Out = $tm.to(parallaxBG2, 1, { y: '30%', ease: Power1.easeOut });
-
-      // var slideParallax1Scene = new ScrollMagic.Scene({ triggerElement: '.intro', duration: "100%", triggerHook: 0 })
-                // .setTween(parallax1)
-                // .addTo(animController);
-
-      // var slideParallax2Scene = new ScrollMagic.Scene({ triggerElement: '.parallax-2', duration: "100%", triggerHook: 1 })
-      //           .setTween(parallax2)
-      //           .addTo(animController);
-      //
-      // var slideParallax3Scene = new ScrollMagic.Scene({ triggerElement: '.parallax-2', duration: "100%", triggerHook: 0 })
-      //           .setTween(parallax2Out)
-      //           .addTo(animController);
-    // }
+    parallaxBGs2.forEach(function(bgs, index) {
+      var num = index + 1;
+      $(bgs).addClass("parallax-bg-2-" + num)
+      $(bgs).parent().addClass("parallax-bg-2-anchor" + num)
+      var parallaxIn = $tm.from($(".parallax-bg-2-" + num), 1, { y: '30%' });
+      var parallaxOut = $tm.to($(".parallax-bg-2-" + num), 1, { y: '-30%' });
+      var slideParallaxSceneIn = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 1 })
+                .setTween(parallaxIn)
+                .addTo(animController);
+      var slideParallaxSceneOut = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 0 })
+                .setTween(parallaxOut)
+                .addTo(animController);
+    });
   })();
   // MouseWheel SmoothScroll
   (function(){
-
-				var $window = $(window);
-				var isTweening = false;
-
-				document.onmousewheel = function(){ customScroll(); }
-				if(document.addEventListener){
-				    document.addEventListener('DOMMouseScroll', customScroll, false);
-				}
-
-				function customScroll(event){
-
-				   var delta = 0;
-
-				   if (!event){
-					   event = window.event;
-				   }
-
-				   if (event.wheelDelta) {
-					   delta = event.wheelDelta/120;
-				   } else if(event.detail) {
-					   delta = -event.detail/3;
-				   }
-
-				   if (delta){
-
-				   		//console.log(isTweening);
-
-				   		//if(!isTweening){
-
-					   		//isTweening = true;
-
-						   	var scrollTop = $window.scrollTop();
-						   	var finScroll = scrollTop - parseInt(delta*100) * 3;
-
-						   	//console.log(finScroll);
-
-						   	TweenMax.to($window, 0.7, {
-							   	scrollTo : { y: finScroll, autoKill:true },
-							   	ease: Power4.easeOut,
-							   	autoKill: true,
-							   	overwrite: 5,
-							   	onComplete: function(){
-							   		//console.log(isTweening);
-							   		//isTweening = false;
-							   	}
-							});
-
-					   //}
-				   }
-
-				   if (event.preventDefault){
-					   event.preventDefault();
-				   }
-
-				   event.returnValue = false;
-
-				}
-
-			});
+		var $window = $(window);
+		var isTweening = false;
+		document.onmousewheel = function(){ customScroll(); }
+		if(document.addEventListener){
+		    document.addEventListener('DOMMouseScroll', customScroll, false);
+		}
+		function customScroll(event){
+		   var delta = 0;
+		   if (!event){
+			   event = window.event;
+		   }
+		   if (event.wheelDelta) {
+			   delta = event.wheelDelta/120;
+		   } else if(event.detail) {
+			   delta = -event.detail/3;
+		   }
+		   if (delta){
+			      var scrollTop = $window.scrollTop();
+				   	var finScroll = scrollTop - parseInt(delta*100) * 3;
+				   	TweenMax.to($window, 0.7, {
+					   	scrollTo : { y: finScroll, autoKill:true },
+					   	ease: Power4.easeOut,
+					   	autoKill: true,
+					   	overwrite: 5,
+					   	onComplete: function(){
+					   		//console.log(isTweening);
+					   	}
+					});
+		   }
+		   if (event.preventDefault){
+			   event.preventDefault();
+		   }
+		   event.returnValue = false;
+		}
+	})();
   // Hover over effect collections
   (function() {
     var imgMaskTLIn = new TimelineLite();
@@ -154,6 +111,31 @@ $(document).on('turbolinks:load', function() {
                 .to($(this).find(".collection-name"), 0.5, { opacity: 0, scale: 0.5 }, "-=0.5")
       }
     }, ".collections-img-wrapper")
+  })();
+  // Parallax Element
+  (function() {
+    // var elements = $.find(".parallax-element");
+    // var $tm = TweenMax;
+    // elements.forEach(function(el, index) {
+    //   var num = index + 1;
+    //   $(el).addClass("parallax-element-" + num);
+    //   var parallaxElementAnim = $tm.from($(".parallax-element-" + num ), 2, { y: 50, opacity: 0, ease: Power4.easeOut });
+    //
+    //   var parallaxElementScene = new ScrollMagic.Scene({ triggerElement: ".parallax-element-" + num })
+    //             .setTween(parallaxElementAnim)
+    //             .addTo(animController);
+    // }) ;
+    var elements = $.find(".parallax-element-detected");
+    var $tm = TweenMax;
+    elements.forEach(function(el, index) {
+      var num = index + 1;
+      $(el).addClass("parallax-element-" + num);
+      var parallaxElementAnim = $tm.staggerFrom($(".parallax-element-" + num + " .parallax-element"), 2, { y: 100, opacity: 0, ease: Power4.easeOut }, 0.2);
+
+      var parallaxElementScene = new ScrollMagic.Scene({ triggerElement: ".parallax-element-" + num, offset: -100 })
+                .setTween(parallaxElementAnim)
+                .addTo(animController);
+    }) ;
   })();
 
   //==================================================//

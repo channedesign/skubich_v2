@@ -1,2 +1,9 @@
-
-  // $(".visible-column").removeClass('box-red').addClass('box-green');
+var column = $("#jewelry-<%= @jewelry.id %> .visible-column");
+var columnLink = $("#jewelry-<%= @jewelry.id %> .visible-column a");
+<% if @jewelry.visible? %>
+  column.removeClass('box-red').addClass('box-green');
+  columnLink.html('Yes')
+<% else %>
+  column.removeClass('box-green').addClass('box-red');
+  columnLink.html('No')
+<% end %>
