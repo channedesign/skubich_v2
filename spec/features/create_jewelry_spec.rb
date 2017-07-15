@@ -26,6 +26,9 @@ feature 'Add a jewelry' do
     expect(page).to have_content('Test Name')
     expect(page).to have_content(collection_2.name)
     expect(page).to have_content('Jewelry was successfully created')
+    within '.jewelry-position' do
+      expect(page).to have_content(1)
+    end
   end
 
 end

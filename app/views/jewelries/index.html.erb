@@ -9,6 +9,8 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th colspan="1"><%= image_tag 'icon-drag.png', class: 'image-thumb-drag' %></th>
+          <th>#</th>
           <th>Name</th>
           <th>Picture</th>
           <th>Inspiration</th>
@@ -19,9 +21,11 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="vertical-sortable" data-update-url="<%= sort_jewelries_path %>">
         <% @jewelries.each do |jewelry| %>
           <tr id="jewelry-<%= jewelry.id %>">
+            <td class="drag-handle"><%= image_tag 'icon-drag-handle.png', class: 'image-thumb-handle' %></td>
+            <td class="jewelry-position"><%= jewelry.position %></td>
             <td><%= jewelry.name %></td>
             <td><%= image_tag jewelry.picture.url(:thumb) %></td>
             <td><%= jewelry.inspiration %></td>

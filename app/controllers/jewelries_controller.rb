@@ -1,6 +1,7 @@
 class JewelriesController < ApplicationController
   layout 'admin'
   before_action :authenticate_admin!
+  skip_before_action :verify_authenticity_token, only: :sort
   before_action :set_jewelry, only: [:show, :edit, :update, :destroy]
 
   # GET /jewelries
@@ -60,6 +61,16 @@ class JewelriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to jewelries_url, notice: 'Jewelry was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
+    end
+  end
+
+  def sort
+    params[:jewelry].each_with_index do |id, index|
+      Jewelry.where(id: id).update_all({position: index + 1})
+    end
+    # render nothing: true
+    respond_to do |format|
       format.js
     end
   end

@@ -1,0 +1,15 @@
+<% @collections.each do |collection| %>
+  <div id="<%= collection.name %>" class="row paddingTop150">
+    <div class="col-12">
+      <%= collection.name %>
+    </div>
+    <% collection.jewelries.each do |jewelry| %>
+      <div class="col-4 text-center">
+        <%= link_to '' do %>
+          <%= jewelry.name %><br>
+          <%= image_tag jewelry.picture.url %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

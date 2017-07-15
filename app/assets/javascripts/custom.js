@@ -31,6 +31,7 @@ $(document).on('turbolinks:load', function() {
     // var parallaxBG1 = $(".parallax-bg-1");
     // var parallaxBG2 = $(".parallax-bg-2");
     var parallaxBGs = $.find(".parallax-bg");
+    var parallaxBGs2 = $.find(".parallax-bg-2");
     var $tm = TweenMax;
     var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                navigator.userAgent && !navigator.userAgent.match('CriOS');
@@ -40,14 +41,26 @@ $(document).on('turbolinks:load', function() {
       parallaxBGs.forEach(function(bgs, index) {
         var num = index + 1;
         $(bgs).addClass("parallax-bg-" + num)
-        var anchor = $(bgs).parent().addClass("parallax-bg-anchor" + num)
-        console.log($(bgs).parent())
+        $(bgs).parent().addClass("parallax-bg-anchor" + num)
         var parallax = $tm.to($(".parallax-bg-" + num), 1, { y: '50%', ease: Power2.easeOut });
         var slideParallaxScene = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-anchor" + num, duration: "100%", triggerHook: 0.2 })
                   .setTween(parallax)
                   .addTo(animController);
       });
 
+      parallaxBGs2.forEach(function(bgs, index) {
+        var num = index + 1;
+        $(bgs).addClass("parallax-bg-2-" + num)
+        $(bgs).parent().addClass("parallax-bg-2-anchor" + num)
+        var parallaxIn = $tm.from($(".parallax-bg-2-" + num), 1, { y: '30%' });
+        var parallaxOut = $tm.to($(".parallax-bg-2-" + num), 1, { y: '-30%' });
+        var slideParallaxSceneIn = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 1 })
+                  .setTween(parallaxIn)
+                  .addTo(animController);
+        var slideParallaxSceneOut = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 0 })
+                  .setTween(parallaxOut)
+                  .addTo(animController);
+      });
       // var parallax1 = $tm.to(parallaxBG1, 1, { y: '50%', ease: Power1.easeOut });
       // var parallax2 = $tm.from(parallaxBG2, 1, { y: '-40%', ease: Power1.easeInOut });
       // var parallax2Out = $tm.to(parallaxBG2, 1, { y: '30%', ease: Power1.easeOut });
@@ -163,6 +176,14 @@ $(document).on('turbolinks:load', function() {
   // jquery-ui sortable
   (function() {
     $(".sortable").sortable({
+      cursor: 'move',
+      update: function() {
+        $.post($(this).data("update-url"), $(this).sortable('serialize'))
+      }
+    });
+    $(".vertical-sortable").sortable({
+      axis: "y",
+      cursor: 'move',
       update: function() {
         $.post($(this).data("update-url"), $(this).sortable('serialize'))
       }

@@ -1,5 +1,5 @@
 @import "bootstrap";
-// @import "font-awesome";
+@import "font-awesome";
 @font-face {
   font-family: 'AvenirNext-regular';
   src: font-url('AvenirNext-Regular.ttf');
@@ -76,7 +76,7 @@ ul {
 
 .background {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 150%;
 }
 
 .box {
@@ -159,16 +159,6 @@ ul {
 	z-index: 3;
 }
 
-.parallax-bg {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
-	position: absolute;
-	width: 100vw;
-	z-index: 2;
-}
-
 .full-height {
   height: 85vh;
 }
@@ -192,6 +182,20 @@ ul {
 .notice {
   position: relative;
   z-index: 999999;
+}
+
+.paddingTop150 {
+  padding-top: 150px;
+}
+
+.parallax-bg, .parallax-bg-2 {
+	// background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+	z-index: 2;
 }
 
 .video {
@@ -229,7 +233,15 @@ nav {
       color: $purple;
     }
   }
-
+  .social-icon-wrapper {
+    position: relative;
+    top: 40px;
+    width: 180px;
+    .social-link {
+      float: left;
+      margin-left: 20px;
+    }
+  }
 }
 
 /*--------------------------------------------------*/
@@ -260,7 +272,7 @@ nav {
 #about {
   background-image: image-url('background-3.png');
   h1 {
-    margin-top: 250px;
+    margin-top: 350px;
   }
   .img-profile {
     margin-top: 150px;
@@ -274,9 +286,10 @@ nav {
 
 #contact {
   background-image: image-url('background-2.png');
+  background-position: right top;
   line-height: 48px;
   h1 {
-    margin-top: 200px;
+    margin-top: 250px;
   }
   form {
     margin-bottom: 100px;
@@ -357,6 +370,26 @@ footer {
 }
 
 /*--------------------------------------------------*/
+/*                Inter Sections                    */
+/*--------------------------------------------------*/
+
+.inter-section-1 {
+  height: 400px;
+  .parallax-bg-2 {
+    background-image: image-url('photo-profil.jpg');
+
+  }
+}
+
+.inter-section-2 {
+  height: 400px;
+  .parallax-bg-2 {
+    background-image: image-url('Sunset-NewYork.jpg');
+
+  }
+}
+
+/*--------------------------------------------------*/
 /*                    Admin                         */
 /*--------------------------------------------------*/
 
@@ -373,10 +406,17 @@ footer {
   }
   table {
     th {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(0, 0, 0, 0.5);
       text-align: center;
     }
     td {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(0, 0, 0, 0.5);
       vertical-align: middle;
+    }
+    .drag-handle {
+      background-color: #fff;
     }
   }
   .admin-side-bar {
@@ -430,6 +470,12 @@ footer {
     width: 300px;
     margin-bottom: 30px;
   }
+  .image-thumb-drag {
+		width: 15px;
+	}
+	.image-thumb-handle {
+		width: 35px;
+	}
   .upload-btn-wrapper {
     display: inline-block;
     margin-bottom: 50px;

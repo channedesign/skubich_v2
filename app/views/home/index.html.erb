@@ -24,7 +24,7 @@
     <div class="row marginBottom100">
       <% @collections.each do |collection| %>
         <div class="col-md-3 marginTop50">
-          <%= link_to '' do %>
+          <%= link_to jewelries_pages_path(anchor: collection.name) do %>
             <div class="collections-img-wrapper mx-auto">
               <%= image_tag collection.picture.url %>
               <div class="collections-img-mask"></div>
@@ -37,14 +37,14 @@
     </div>
   </div>
 </div>
-<div id="about" class="background">
+<div class="inter-section-1">
+  <div class="parallax-bg-2"></div>
+</div>
+<div id="about" class="background custom-container">
   <div class="container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-12">
         <h1>ABOUT</h1>
-      </div>
-      <div class="col-4">
-        <%= image_tag 'profile.png', class: 'img-profile' %>
       </div>
     </div>
     <div class="row marginTop50">
@@ -93,7 +93,10 @@
     </div>
   </div>
 </div>
-<div id="contact" class="background">
+<div class="inter-section-2">
+  <div class="parallax-bg-2"></div>
+</div>
+<div id="contact" class="background custom-container">
   <div class="container">
     <div class="row">
       <h1>CONTACT</h1>
