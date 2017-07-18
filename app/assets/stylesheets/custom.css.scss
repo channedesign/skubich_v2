@@ -4,6 +4,10 @@
   font-family: 'AvenirNext-regular';
   src: font-url('AvenirNext-Regular.ttf');
 }
+@font-face {
+  font-family: 'AvenirNext-bold';
+  src: font-url('AvenirNext-Bold.ttf');
+}
 
 $purple: #4D004D;
 $dark-green: #093f35;
@@ -51,12 +55,9 @@ ul {
 // }
 
 .swiper-container {
-  height: 500px;
-  // margin-top: 50px;
-  width: 800px;
-  .swiper-pagination {
-    z-index: 999999;
-  }
+  height: 65vh;
+  margin-top: -50px;
+  width: 63vw;
 }
 
 /*--------------------------------------------------*/
@@ -123,7 +124,7 @@ ul {
 .collections-img-wrapper {
   border: 15px solid #fff;
   position: relative;
-  width: 220px;
+  width: 250px;
   -webkit-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
   -moz-box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
   box-shadow: 7px 7px 15px 0px rgba(143,140,143,1);
@@ -139,6 +140,7 @@ ul {
   }
   .collection-name {
     bottom: 0;
+    font-size: 20px;
     height: 30px;
     margin: auto;
     opacity: 0;
@@ -198,9 +200,13 @@ ul {
 	z-index: 2;
 }
 
+.parallax-element {
+  position: relative;
+}
+
 .video {
   border: none;
-  height: 450px;
+  height: 100%;
   width: 100%;
 }
 
@@ -345,6 +351,64 @@ nav {
 //   background-color: white;
 //   border: none;
 // }
+}
+
+/*--------------------------------------------------*/
+/*                  Jewelries                       */
+/*--------------------------------------------------*/
+
+#jewelries-page {
+  .collection-title-wrapper {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    // position: relative;
+    width: 100%;
+    .title-collection {
+      color: #fff;
+      font-family: 'AvenirNext-bold';
+      font-size: 100px;
+      left: 50px;
+      position: relative;
+      // top: 50px;
+    }
+  }
+  .collection-title-wrapper-odd {
+    -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    .title-collection {
+      top: 100px;
+    }
+  }
+  .collection-title-wrapper-even {
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    .title-collection {
+      top: 50px;
+    }
+  }
+  .jewelry-link {
+    a:focus {
+      outline: none;
+    }
+  }
+  .container:last-child {
+    margin-bottom: 50px;
+  }
+}
+
+/*--------------------------------------------------*/
+/*                    Modal                         */
+/*--------------------------------------------------*/
+
+.modal {
+  .modal-header, .modal-footer {
+    border: none;
+  }
+  .jewelry-inspiration, .jewelry-material {
+    font-size: 30px;
+  }
 }
 
 /*--------------------------------------------------*/

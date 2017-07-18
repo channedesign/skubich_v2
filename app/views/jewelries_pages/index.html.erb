@@ -1,15 +1,42 @@
-<% @collections.each do |collection| %>
-  <div id="<%= collection.name %>" class="row paddingTop150">
-    <div class="col-12">
-      <%= collection.name %>
+<div id="jewelries-page">
+  <% @collections.each do |collection| %>
+    <div id="<%= collection.name %>" class="row paddingTop150">
+      <div class="collection-title-wrapper <%= collection.position.odd? ? 'collection-title-wrapper-odd' : 'collection-title-wrapper-even' %>" style="background-image:url(<%= collection.title_image.url %>)">
+        <span class="title-collection"><%= collection.name %></span>
+      </div>
     </div>
-    <% collection.jewelries.each do |jewelry| %>
-      <div class="col-4 text-center">
-        <%= link_to '' do %>
-          <%= jewelry.name %><br>
-          <%= image_tag jewelry.picture.url %>
+    <div class="container">
+      <div class="row parallax-element-detected">
+        <% collection.jewelries.each do |jewelry| %>
+          <div class="col-md-4 text-center jewelry-link jewelry-img-wrapper">
+            <%= link_to '', class: '', data: { toggle: 'modal', target: '#jewelryModal', jewelry_picture: jewelry.picture.url, jewelry_title: jewelry.name, jewelry_inspiration: jewelry.inspiration, jewelry_material: jewelry.material  } do %>
+              <%= image_tag jewelry.picture.url(:medium), class: 'parallax-element' %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="modal fade" id="jewelryModal" tabindex="-1" role="dialog" aria-labelledby="jewelryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg text-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h1 class="modal-title" id="jewelryModalLabel"></h1>
+        <div class="jewelry-inspiration"></div>
+        <div class="jewelry-material"></div>
+        <div class="jewelry-picture"></div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Next</button>
+      </div> -->
+    </div>
   </div>
-<% end %>
+</div>

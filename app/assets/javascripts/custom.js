@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-
+// $(document).ready(function() {
 
 
   //==================================================//
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
   // SmoothScroll Navbar Animation Scene
   (function() {
     animController.scrollTo(function (newpos) {
-        TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease:Power1.easeInOut});
+        TweenMax.to(window, 1, {scrollTo: {y: newpos - 30}, ease:Power1.easeInOut});
     });
     $(document).on("click", ".nav-link", function (e) {
       var id = $(this)[0].hash;
@@ -60,42 +60,42 @@ $(document).on('turbolinks:load', function() {
     });
   })();
   // MouseWheel SmoothScroll
-  (function(){
-		var $window = $(window);
-		var isTweening = false;
-		document.onmousewheel = function(){ customScroll(); }
-		if(document.addEventListener){
-		    document.addEventListener('DOMMouseScroll', customScroll, false);
-		}
-		function customScroll(event){
-		   var delta = 0;
-		   if (!event){
-			   event = window.event;
-		   }
-		   if (event.wheelDelta) {
-			   delta = event.wheelDelta/120;
-		   } else if(event.detail) {
-			   delta = -event.detail/3;
-		   }
-		   if (delta){
-			      var scrollTop = $window.scrollTop();
-				   	var finScroll = scrollTop - parseInt(delta*100) * 3;
-				   	TweenMax.to($window, 0.7, {
-					   	scrollTo : { y: finScroll, autoKill:true },
-					   	ease: Power4.easeOut,
-					   	autoKill: true,
-					   	overwrite: 5,
-					   	onComplete: function(){
-					   		//console.log(isTweening);
-					   	}
-					});
-		   }
-		   if (event.preventDefault){
-			   event.preventDefault();
-		   }
-		   event.returnValue = false;
-		}
-	})();
+  // (function(){
+	// 	var $window = $(window);
+	// 	var isTweening = false;
+	// 	document.onmousewheel = function(){ customScroll(); }
+	// 	if(document.addEventListener){
+	// 	    document.addEventListener('DOMMouseScroll', customScroll, false);
+	// 	}
+	// 	function customScroll(event){
+	// 	   var delta = 0;
+	// 	   if (!event){
+	// 		   event = window.event;
+	// 	   }
+	// 	   if (event.wheelDelta) {
+	// 		   delta = event.wheelDelta/120;
+	// 	   } else if(event.detail) {
+	// 		   delta = -event.detail/3;
+	// 	   }
+	// 	   if (delta){
+	// 		      var scrollTop = $window.scrollTop();
+	// 			   	var finScroll = scrollTop - parseInt(delta*100) * 3;
+	// 			   	TweenMax.to($window, 0.7, {
+	// 				   	scrollTo : { y: finScroll, autoKill:true },
+	// 				   	ease: Power4.easeOut,
+	// 				   	autoKill: true,
+	// 				   	overwrite: 5,
+	// 				   	onComplete: function(){
+	// 				   		//console.log(isTweening);
+	// 				   	}
+	// 				});
+	// 	   }
+	// 	   if (event.preventDefault){
+	// 		   event.preventDefault();
+	// 	   }
+	// 	   event.returnValue = false;
+	// 	}
+	// })();
   // Hover over effect collections
   (function() {
     var imgMaskTLIn = new TimelineLite();
@@ -112,6 +112,7 @@ $(document).on('turbolinks:load', function() {
       }
     }, ".collections-img-wrapper")
   })();
+
   // Parallax Element
   (function() {
     // var elements = $.find(".parallax-element");
@@ -150,6 +151,24 @@ $(document).on('turbolinks:load', function() {
      paginationClickable: true,
    });
   })();
+
+  //==================================================//
+  // Jewelries Modal                                  //
+  //==================================================//
+
+  $('#jewelryModal').on('show.bs.modal', function (event) {
+    var jewelry = $(event.relatedTarget); // Button that triggered the modal
+    var title = jewelry.data('jewelry-title');
+    var picture = jewelry.data('jewelry-picture');
+    var inspiration = jewelry.data('jewelry-inspiration');
+    var material = jewelry.data('jewelry-material');
+
+    var modal = $(this);
+    modal.find('.modal-title').text(title);
+    modal.find('.jewelry-picture').html("<img src='" + picture + "' />");
+    modal.find('.jewelry-inspiration').text(inspiration);
+    modal.find('.jewelry-material').text(material);
+  });
 
   //==================================================//
   // Admin                                            //

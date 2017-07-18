@@ -166,7 +166,7 @@
 }
 /* Pagination Styles */
 .swiper-pagination {
-  position: absolute;
+  position: relative;
   text-align: center;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
@@ -191,8 +191,9 @@
 }
 /* Bullets */
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
   display: inline-block;
   border-radius: 100%;
   background: #000;
@@ -216,7 +217,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff;
+  background: #4D004D;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;

@@ -1,5 +1,5 @@
 class JewelriesPagesController < ApplicationController
   def index
-    @collections = Collection.order(:position).includes(:jewelries).where(jewelries: { visible: true })
+    @collections = Collection.with_jewelries
   end
 end

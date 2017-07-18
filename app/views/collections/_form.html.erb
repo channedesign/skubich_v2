@@ -29,6 +29,10 @@
           <button class="btn btn-custom"><%= collection.picture? ? 'Upload Different Picture' : 'Upload Picture' %></button>
           <%= form.file_field :picture, id: :collection_picture %>
         </div>
+        <div class="upload-btn-wrapper">
+          <button class="btn btn-custom">Upload Picture</button>
+          <%= form.file_field :title_image, id: :collection_title_image %>
+        </div>
 
       <div class="actions">
         <%= form.submit class: 'btn btn-secondary' %>
