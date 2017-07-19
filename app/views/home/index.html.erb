@@ -6,8 +6,8 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><iframe class="video" src="https://player.vimeo.com/video/146656196?autoplay=0&amp;loop=0&amp;color=8D8292&amp;title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                 <div class="swiper-slide"><%= image_tag 'carousel-1.jpg' %></div>
-                <div class="swiper-slide"><%= image_tag 'carousel-2.jpg' %></div>
-                <div class="swiper-slide"><%= image_tag 'carousel-3.jpg' %></div>
+                <!-- <div class="swiper-slide"><%= image_tag 'carousel-2.jpg' %></div> -->
+                <!-- <div class="swiper-slide"><%= image_tag 'carousel-3.jpg' %></div> -->
                 <div class="swiper-slide"><%= image_tag 'carousel-4.jpg' %></div>
                 <div class="swiper-slide"><%= image_tag 'carousel-5.jpg' %></div>
             </div>
@@ -27,7 +27,7 @@
     <div class="row marginBottom100 parallax-element-detected">
       <% @collections.each do |collection| %>
         <div class="col-lg-3 col-md-6 marginTop50 parallax-element">
-          <%= link_to jewelries_pages_path(anchor: collection.name) do %>
+          <%= link_to jewelries_pages_path(anchor: collection.name == 'African Mermaid' ? 'African' : collection.name) do %>
             <div class="collections-img-wrapper mx-auto">
               <%= image_tag collection.picture.url(:medium) %>
               <div class="collections-img-mask"></div>

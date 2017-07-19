@@ -507,6 +507,7 @@ nav {
 /*--------------------------------------------------*/
 
 #jewelries-page {
+  overflow-x: hidden;
   .collection-title-wrapper {
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -590,11 +591,25 @@ nav {
 /*--------------------------------------------------*/
 
 .modal {
+  .close {
+    z-index: 9999;
+  }
+  .modal-body {
+    margin-top: -53px;
+    padding: 0;
+  }
   .modal-header, .modal-footer {
     border: none;
   }
   .jewelry-inspiration, .jewelry-material {
     font-size: 30px;
+  }
+  .text-wrapper {
+    background-color: #f3f3f3;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
   }
 }
 
@@ -644,7 +659,7 @@ footer {
 .inter-section-1 {
   .parallax-bg-2 {
     background-image: image-url('photo-profil.jpg');
-    background-position: center right;
+    background-position: top right;
   }
 
 }
