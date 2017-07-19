@@ -279,6 +279,13 @@ nav {
       width: 480px;
     }
   }
+  @media(max-width: 768px) {
+    .navbar-nav {
+      font-size: 20px;
+      width: 430px;
+    }
+  }
+
   @media(max-width: 767px) {
     height: 55px;
     .navbar-brand {
@@ -320,15 +327,17 @@ nav {
 #home {
   background-image: image-url('background-1.jpg');
   height: 85vh;
+  margin-bottom: 100px;
   // padding-top: 130px;
   .swiper-container {
     height: 65vh;
     width: 63vw;
   }
   @media(orientation: portrait) {
-    height: 45vh;
+    // height: 80vh;
     .swiper-container {
-      height: 150px;
+      height: 100%;
+      width: 100%;
       // margin-top: -50px;
     }
   }
@@ -368,7 +377,7 @@ nav {
     margin-top: 150px;
     width: 80%;
   }
-  @media(max-width: 767px) {
+  @media(max-width: 768px) {
     h1 {
       margin-top: 250px;
     }
@@ -475,7 +484,7 @@ nav {
       font-size: 30px;
     }
   }
-  @media(max-width: 767px) {
+  @media(max-width: 768px) {
     .form {
       display: none;
     }
