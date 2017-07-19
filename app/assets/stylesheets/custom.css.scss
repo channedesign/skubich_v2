@@ -336,7 +336,7 @@ nav {
   @media(orientation: portrait) {
     // height: 80vh;
     .swiper-container {
-      height: 100%;
+      min-height: 100%;
       width: 100%;
       // margin-top: -50px;
     }
