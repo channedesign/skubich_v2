@@ -51,6 +51,8 @@ $(document).on('turbolinks:load', function() {
       $(bgs).parent().addClass("parallax-bg-2-anchor" + num)
       var parallaxIn = $tm.from($(".parallax-bg-2-" + num), 1, { y: '30%' });
       var parallaxOut = $tm.to($(".parallax-bg-2-" + num), 1, { y: '-30%' });
+      // var parallaxIn = $tm.from($(".parallax-bg-2-" + num), 1, { y: '60%' });
+      // var parallaxOut = $tm.to($(".parallax-bg-2-" + num), 1, { y: '-30%' });
       var slideParallaxSceneIn = new ScrollMagic.Scene({ triggerElement: ".parallax-bg-2-anchor" + num, duration: "100%", triggerHook: 1 })
                 .setTween(parallaxIn)
                 .addTo(animController);
@@ -60,42 +62,44 @@ $(document).on('turbolinks:load', function() {
     });
   })();
   // MouseWheel SmoothScroll
-  // (function(){
-	// 	var $window = $(window);
-	// 	var isTweening = false;
-	// 	document.onmousewheel = function(){ customScroll(); }
-	// 	if(document.addEventListener){
-	// 	    document.addEventListener('DOMMouseScroll', customScroll, false);
-	// 	}
-	// 	function customScroll(event){
-	// 	   var delta = 0;
-	// 	   if (!event){
-	// 		   event = window.event;
-	// 	   }
-	// 	   if (event.wheelDelta) {
-	// 		   delta = event.wheelDelta/120;
-	// 	   } else if(event.detail) {
-	// 		   delta = -event.detail/3;
-	// 	   }
-	// 	   if (delta){
-	// 		      var scrollTop = $window.scrollTop();
-	// 			   	var finScroll = scrollTop - parseInt(delta*100) * 3;
-	// 			   	TweenMax.to($window, 0.7, {
-	// 				   	scrollTo : { y: finScroll, autoKill:true },
-	// 				   	ease: Power4.easeOut,
-	// 				   	autoKill: true,
-	// 				   	overwrite: 5,
-	// 				   	onComplete: function(){
-	// 				   		//console.log(isTweening);
-	// 				   	}
-	// 				});
-	// 	   }
-	// 	   if (event.preventDefault){
-	// 		   event.preventDefault();
-	// 	   }
-	// 	   event.returnValue = false;
-	// 	}
-	// })();
+  (function(){
+    // if(location.pathname === '/') {
+  	// 	var $window = $(window);
+  	// 	var isTweening = false;
+  	// 	document.onmousewheel = function(){ customScroll(); }
+  	// 	if(document.addEventListener){
+  	// 	    document.addEventListener('DOMMouseScroll', customScroll, false);
+  	// 	}
+  	// 	function customScroll(event){
+  	// 	   var delta = 0;
+  	// 	   if (!event){
+  	// 		   event = window.event;
+  	// 	   }
+  	// 	   if (event.wheelDelta) {
+  	// 		   delta = event.wheelDelta/120;
+  	// 	   } else if(event.detail) {
+  	// 		   delta = -event.detail/3;
+  	// 	   }
+  	// 	   if (delta){
+  	// 		      var scrollTop = $window.scrollTop();
+  	// 			   	var finScroll = scrollTop - parseInt(delta*100) * 3;
+  	// 			   	TweenMax.to($window, 0.7, {
+  	// 				   	scrollTo : { y: finScroll, autoKill:true },
+  	// 				   	ease: Power4.easeOut,
+  	// 				   	autoKill: true,
+  	// 				   	overwrite: 5,
+  	// 				   	onComplete: function(){
+  	// 				   		//console.log(isTweening);
+  	// 				   	}
+  	// 				});
+  	// 	   }
+  	// 	   if (event.preventDefault){
+  	// 		   event.preventDefault();
+  	// 	   }
+  	// 	   event.returnValue = false;
+  	// 	}
+    // }
+	})();
   // Hover over effect collections
   (function() {
     var imgMaskTLIn = new TimelineLite();
@@ -133,7 +137,7 @@ $(document).on('turbolinks:load', function() {
       $(el).addClass("parallax-element-" + num);
       var parallaxElementAnim = $tm.staggerFrom($(".parallax-element-" + num + " .parallax-element"), 2, { y: 100, opacity: 0, ease: Power4.easeOut }, 0.2);
 
-      var parallaxElementScene = new ScrollMagic.Scene({ triggerElement: ".parallax-element-" + num, offset: -100 })
+      var parallaxElementScene = new ScrollMagic.Scene({ triggerElement: ".parallax-element-" + num, offset: -100, reverse: false })
                 .setTween(parallaxElementAnim)
                 .addTo(animController);
     }) ;
@@ -146,7 +150,7 @@ $(document).on('turbolinks:load', function() {
   // MySwiper init
   (function() {
     var mySwiper = new Swiper ('.swiper-container', {
-     loop: true,
+      speed: 500,
      pagination: '.swiper-pagination',
      paginationClickable: true,
    });

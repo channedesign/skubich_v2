@@ -1,12 +1,15 @@
-<div id="home" class="background full-height">
+<div id="home" class="background">
   <div class="container parallax-bg">
     <div class="row">
       <div class="col-12">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><iframe class="video" src="https://player.vimeo.com/video/146656196?autoplay=0&amp;loop=0&amp;color=8D8292&amp;title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide"><%= image_tag 'carousel-1.jpg' %></div>
+                <div class="swiper-slide"><%= image_tag 'carousel-2.jpg' %></div>
+                <div class="swiper-slide"><%= image_tag 'carousel-3.jpg' %></div>
+                <div class="swiper-slide"><%= image_tag 'carousel-4.jpg' %></div>
+                <div class="swiper-slide"><%= image_tag 'carousel-5.jpg' %></div>
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -14,7 +17,7 @@
     </div>
   </div>
 </div>
-<div id="collections" class="background custom-container">
+<div id="collections" class="background custom-container marginTop50">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -23,7 +26,7 @@
     </div>
     <div class="row marginBottom100 parallax-element-detected">
       <% @collections.each do |collection| %>
-        <div class="col-md-3 marginTop50 parallax-element">
+        <div class="col-lg-3 col-md-6 marginTop50 parallax-element">
           <%= link_to jewelries_pages_path(anchor: collection.name) do %>
             <div class="collections-img-wrapper mx-auto">
               <%= image_tag collection.picture.url(:medium) %>
@@ -36,7 +39,7 @@
     </div>
   </div>
 </div>
-<div class="inter-section-1">
+<div class="inter-section inter-section-1">
   <div class="parallax-bg-2"></div>
 </div>
 <div id="about" class="background custom-container">
@@ -77,37 +80,51 @@
       <div class="col-12 marginBottom50">
         <p class="parallax-element">Who helped me with the video realization?</p>
       </div>
-      <div class="col-4">
-        <%= image_tag 'logo-vara.png', class: 'parallax-element' %>
+      <div class="col-md-4 col-sm-6 text-center">
+        <%= image_tag 'logo-vara.png', class: 'parallax-element logo logo-vara' %>
       </div>
-      <div class="col-2">
-        <%= image_tag 'logo-flora.jpg', class: 'parallax-element' %>
+      <div class="col-md-2 col-sm-6 text-center">
+        <%= image_tag 'logo-flora.jpg', class: 'parallax-element logo' %>
       </div>
-      <div class="col">
-        <%= image_tag 'logo-rebecca.jpg', class: 'parallax-element' %>
+      <div class="col-md-3 col-sm-6 text-center">
+        <%= image_tag 'logo-rebecca.jpg', class: 'parallax-element logo' %>
       </div>
-      <div class="col">
-        <%= image_tag 'logo-renan.png', class: 'parallax-element' %>
+      <div class="col-md-3 col-sm-6 text-center">
+        <%= image_tag 'logo-renan.png', class: 'parallax-element logo' %>
       </div>
     </div>
   </div>
 </div>
-<div class="inter-section-2">
+<div class="inter-section inter-section-2">
   <div class="parallax-bg-2"></div>
 </div>
 <div id="contact" class="background custom-container">
   <div class="container">
     <div class="row">
-      <h1>CONTACT</h1>
+      <div class="col">
+        <h1>CONTACT</h1>
+      </div>
     </div>
     <div class="row marginTop50 parallax-element-detected">
-      <div class="col text-center parallax-element">
+      <div class="col-12 text-center parallax-element">
         <div class="notice"></div>
-        <%= form_tag(send_email_path, remote: true) do %>
+        <%= form_tag(send_email_path, remote: true , class: 'form' )  do %>
         Hi Camille,<br><br>
         My name is <%= text_field_tag 'name', nil, placeholder: 'Type Your Name', class: 'form-input' %>
         and I'd like to <span class="dot-wrapper"><%= text_area_tag 'message', nil, placeholder: 'Type A Short Message Here', class: 'form-input form-textarea' %><span class="dot">.</span></span><br><br>
         By the way, my email is <%= email_field_tag 'email', nil, placeholder: 'Type Your Email', class: 'form-input' %>.<br>
+          <%= submit_tag 'SEND', class: 'form-submit' %>
+        <% end %>
+        <%= form_tag(send_email_path, remote: true, class: 'form-mobile' ) do %>
+          <div class='form-group'>
+            <%= text_field_tag 'name', nil, placeholder: 'Name', class: 'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= email_field_tag 'email', nil, placeholder: 'Email', class: 'form-control' %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'message', nil, placeholder: 'A Short Message', rows: 5, class: 'form-control' %>
+          </div>
           <%= submit_tag 'SEND', class: 'form-submit' %>
         <% end %>
       </div>

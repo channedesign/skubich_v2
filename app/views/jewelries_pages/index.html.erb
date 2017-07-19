@@ -1,6 +1,6 @@
 <div id="jewelries-page">
   <% @collections.each do |collection| %>
-    <div id="<%= collection.name %>" class="row paddingTop150">
+    <div id="<%= collection.name == 'African Mermaid' ? 'African' : collection.name  %>" class="row paddingTop100">
       <div class="collection-title-wrapper <%= collection.position.odd? ? 'collection-title-wrapper-odd' : 'collection-title-wrapper-even' %>" style="background-image:url(<%= collection.title_image.url %>)">
         <span class="title-collection"><%= collection.name %></span>
       </div>
@@ -33,10 +33,6 @@
         <div class="jewelry-material"></div>
         <div class="jewelry-picture"></div>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Next</button>
-      </div> -->
     </div>
   </div>
 </div>

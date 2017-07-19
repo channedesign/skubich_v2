@@ -16,23 +16,29 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <%= link_to(image_tag('logo-nav.png'), root_path, class: 'navbar-brand')  %>
+      <div class="social-icon-wrapper">
+        <%= link_to((fa_icon "facebook"), 'https://www.facebook.com/cskubich/', class: 'social-link', target: '_blank' )%>
+        <%= link_to((fa_icon "instagram"), 'https://www.instagram.com/camille.skubich/', class: 'social-link', target: '_blank' )%>
+        <%= link_to((fa_icon "twitter "), 'https://twitter.com/CamilleSkubich', class: 'social-link', target: '_blank' )%>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div id="navbar" class="navbar-nav">
           <%= link_to 'HOME', root_path(anchor: 'home'), class: 'nav-item nav-link active' %>
           <%= link_to 'COLLECTIONS', root_path(anchor: 'collections'), class: 'nav-item nav-link active' %>
           <%= link_to 'ABOUT', root_path(anchor: 'about'), class: 'nav-item nav-link active' %>
           <%= link_to 'CONTACT', root_path(anchor: 'contact'), class: 'nav-item nav-link active' %>
+          <div class="nav-item social-icon-mobile">
+            <%= link_to((fa_icon "facebook"), 'https://www.facebook.com/cskubich/', class: 'social-link', target: '_blank' )%>
+            <%= link_to((fa_icon "instagram"), 'https://www.instagram.com/camille.skubich/', class: 'social-link', target: '_blank' )%>
+            <%= link_to((fa_icon "twitter "), 'https://twitter.com/CamilleSkubich', class: 'social-link', target: '_blank' )%>
+          </div>
         </div>
       </div>
-      <div class="social-icon-wrapper">
-        <%= link_to((fa_icon "facebook"), 'https://www.facebook.com/cskubich/', class: 'social-link', target: '_blank' )%>
-        <%= link_to((fa_icon "instagram"), 'https://www.instagram.com/camille.skubich/', class: 'social-link', target: '_blank' )%>
-        <%= link_to((fa_icon "twitter "), 'https://twitter.com/CamilleSkubich', class: 'social-link', target: '_blank' )%>
-      </div>
+
     </nav>
-    <div class="<%= ' custom-margin' unless current_page?(root_path) %>">
+    <!-- <div> -->
       <%= yield %>
-    </div>
+    <!-- </div> -->
     <footer class="text-center">
       <p>Site by <a href="http://www.channedesign.com" target="_blank">Channe</a> | &copy; Camille Skubich Jewelry</p>
     </footer>
