@@ -1,5 +1,22 @@
+var alert = $('.alert');
+var emailInput = $(".email-input");
+var nameInput = $(".name-input");
 <% if @message.valid? %>
   $(".notice").html('Your message was sent successfully!');
+  alert.empty();
+  $(".email-input, .name-input").css("border-bottom", "1px dashed #505050");
 <% else %>
-  $(".notice").html('Your message was NOT sent!');
+  alert.empty();
+  <% @message.errors.full_messages.each do |msg| %>
+    var msg = '<%= "#{msg}" %><br>'
+    alert.append(msg);
+    if(msg.includes('Email')) {
+      emailInput.addClass("field-with-errors");
+      emailInput.css("border-bottom", "3px solid #F2DEDE");
+    }
+    if(msg.includes('Name')) {
+      nameInput.addClass("field-with-errors");
+      nameInput.css("border-bottom", "3px solid #F2DEDE");
+    }
+  <% end %>
 <% end %>

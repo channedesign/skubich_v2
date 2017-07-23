@@ -1,5 +1,6 @@
 var column = $("#jewelry-<%= @jewelry.id %> .visible-column");
 var columnLink = $("#jewelry-<%= @jewelry.id %> .visible-column a");
+column.html("<%=j link_to @jewelry.visible? ? 'Yes' : 'No', jewelry_path(@jewelry, jewelry: { visible: @jewelry.visible? ? 'false' : 'true' }), class: 'toggle-visibility', method: :put, remote: true %>")
 <% if @jewelry.visible? %>
   column.removeClass('box-red').addClass('box-green');
   columnLink.html('Yes')

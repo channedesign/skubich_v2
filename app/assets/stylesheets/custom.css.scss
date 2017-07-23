@@ -75,6 +75,10 @@ ul {
   border: 1px solid $dark-green;
 }
 
+.alert {
+  color: $light-red;
+}
+
 .background {
   background-repeat: no-repeat;
   background-size: 150%;
@@ -194,6 +198,7 @@ ul {
 }
 
 .notice {
+  color: $light-green;
   position: relative;
   z-index: 999999;
 }
@@ -439,6 +444,8 @@ nav {
       display: inline-block;
       outline: none;
       text-align: center;
+      width: 40%;
+      min-width: 40%;
     }
     .form-textarea {
       height: 55px;
@@ -461,24 +468,18 @@ nav {
     color: $purple;
     cursor: pointer;
   }
-
-// .field_with_errors {
-//   input {
-//     border-bottom: 1px solid #b30000 ;
-//   }
-// }
-//
-// .error {
-//   font-size: 20px;
-//   color: #b30000;
-// }
-//
-// .alert {
-//   height: 20px;
-//   padding-bottom: -18px;
-//   background-color: white;
-//   border: none;
-// }
+  .field-with-errors::-webkit-input-placeholder {
+    color: $light-red;
+  }
+  .field-with-errors::-moz-placeholder {
+    color: $light-red;
+  }
+  .field-with-errors:-ms-input-placeholder  {
+    color: $light-red;
+  }
+  .field-with-errors:-moz-placeholder  {
+    color: $light-red;
+  }
   @media(max-width: 992px) {
     .form {
       font-size: 30px;

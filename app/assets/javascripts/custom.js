@@ -3,6 +3,31 @@ $(document).on('turbolinks:load', function() {
 
 
   //==================================================//
+  // Contact - Form                                   //
+  //==================================================//
+  (function() {
+    var $formInput = $(".form-input");
+    var $textInput = $(".form-textarea");
+    var emailInput = $(".email-input");
+    var nameInput = $(".name-input");
+
+    // Auto-resize contact form
+    $formInput.autosizeInput();
+  	autosize($textInput); // For Text-area
+
+    nameInput.keypress(function() {
+        nameInput.css("border-bottom", "1px dashed #505050");
+    });
+    emailInput.keypress(function() {
+        emailInput.css("border-bottom", "1px dashed #505050");
+    });
+
+  })();
+
+
+
+
+  //==================================================//
   // Animations                                       //
   //==================================================//
 
@@ -63,42 +88,50 @@ $(document).on('turbolinks:load', function() {
   })();
   // MouseWheel SmoothScroll
   (function(){
-    // if(location.pathname === '/') {
-  	// 	var $window = $(window);
-  	// 	var isTweening = false;
-  	// 	document.onmousewheel = function(){ customScroll(); }
-  	// 	if(document.addEventListener){
-  	// 	    document.addEventListener('DOMMouseScroll', customScroll, false);
-  	// 	}
-  	// 	function customScroll(event){
-  	// 	   var delta = 0;
-  	// 	   if (!event){
-  	// 		   event = window.event;
-  	// 	   }
-  	// 	   if (event.wheelDelta) {
-  	// 		   delta = event.wheelDelta/120;
-  	// 	   } else if(event.detail) {
-  	// 		   delta = -event.detail/3;
-  	// 	   }
-  	// 	   if (delta){
-  	// 		      var scrollTop = $window.scrollTop();
-  	// 			   	var finScroll = scrollTop - parseInt(delta*100) * 3;
-  	// 			   	TweenMax.to($window, 0.7, {
-  	// 				   	scrollTo : { y: finScroll, autoKill:true },
-  	// 				   	ease: Power4.easeOut,
-  	// 				   	autoKill: true,
-  	// 				   	overwrite: 5,
-  	// 				   	onComplete: function(){
-  	// 				   		//console.log(isTweening);
-  	// 				   	}
-  	// 				});
-  	// 	   }
-  	// 	   if (event.preventDefault){
-  	// 		   event.preventDefault();
-  	// 	   }
-  	// 	   event.returnValue = false;
-  	// 	}
-    // }
+    if(location.pathname != '/jewelries') {
+  		var $window = $(window);
+  		var isTweening = false;
+  		document.onmousewheel = function(){ customScroll(); }
+  		if(document.addEventListener){
+  		    document.addEventListener('DOMMouseScroll', customScroll, false);
+  		}
+  		function customScroll(event){
+  		   var delta = 0;
+  		   if (!event){
+  			   event = window.event;
+  		   }
+  		   if (event.wheelDelta) {
+  			   delta = event.wheelDelta/120;
+  		   } else if(event.detail) {
+  			   delta = -event.detail/3;
+  		   }
+  		   if (delta){
+  			      var scrollTop = $window.scrollTop();
+  				   	var finScroll = scrollTop - parseInt(delta*100) * 3;
+  				   	TweenMax.to($window, 0.7, {
+  					   	scrollTo : { y: finScroll, autoKill:true },
+  					   	ease: Power4.easeOut,
+  					   	autoKill: true,
+  					   	overwrite: 5,
+  					   	onComplete: function(){
+  					   		//console.log(isTweening);
+  					   	}
+  					});
+  		   }
+  		   if (event.preventDefault){
+  			   event.preventDefault();
+  		   }
+  		   event.returnValue = false;
+  		}
+    } else {
+      document.onmousewheel = function(){ normalScroll(); }
+      if(document.addEventListener){
+  		    document.addEventListener('DOMMouseScroll', normalScroll, false);
+  		}
+      function normalScroll() {
+
+      }
+    }
 	})();
   // Hover over effect collections
   (function() {
