@@ -114,7 +114,17 @@
         My name is <%= text_field_tag 'name', nil, placeholder: 'Type Your Name', class: 'form-input name-input' %>
         and I'd like to <span class="dot-wrapper"><%= text_area_tag 'message', nil, placeholder: 'Type A Short Message Here', class: 'form-input form-textarea' %><span class="dot">.</span></span><br><br>
         By the way, my email is <%= email_field_tag 'email', nil, placeholder: 'Type Your Email', class: 'form-input email-input' %>.<br>
+        <div class="paper-plane-wrapper">
+          <svg class="svg-lines" width="100%" height="100%" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+            <path id="trail" d="M6.044,73.835c0,0 68.026,-38.204 186.291,-36.833c90.058,1.045 132.836,32.117 157.582,51.596c47.589,37.458 10.037,66.43 -9.357,65.595c-15.835,-0.681 -44.514,-14.884 -31.322,-44.376c35.135,-78.553 158.913,-91.491 278.881,-37.206c67.246,30.428 165.956,50.908 245.957,-66.278" stroke="#000" stroke-width="2" fill="none"style="stroke-dashoffset: 1500px; stroke-dasharray: 1500px;" />
+            <path d="M6.044,73.835c0,0 68.026,-38.204 186.291,-36.833c90.058,1.045 132.836,32.117 157.582,51.596c47.589,37.458 10.037,66.43 -9.357,65.595c-15.835,-0.681 -44.514,-14.884 -31.322,-44.376c35.135,-78.553 158.913,-91.491 278.881,-37.206c67.246,30.428 165.956,50.908 245.957,-66.278" stroke="#fff" stroke-width="3" fill="none"style="stroke-dasharray: 10px;" />
+          </svg>
+          <svg class="svg-plane" width="100%" height="200" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <path id="plane" d="M72.43,118.924l-31.128,34.551l9.875,-57.638l-47.534,-41.568l268.174,-51.444l-150.807,184.268l-48.58,-68.169l199.387,-116.099l-220.64,93.012l-9.875,57.638l44.602,-15.644" style="fill:none;stroke:#000;stroke-width:3.5px;stroke-dashoffset: 2000px;stroke-dasharray: 2000px;"/>
+          </svg>
+
           <%= submit_tag 'SEND', class: 'form-submit' %>
+        </div>
         <% end %>
         <%= form_tag(send_email_path, remote: true, class: 'form-mobile' ) do %>
           <div class='form-group'>

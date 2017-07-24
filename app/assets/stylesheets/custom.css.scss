@@ -427,6 +427,7 @@ nav {
   h1 {
     margin-top: 250px;
   }
+
   .form {
     margin-bottom: 100px;
     .dot-wrapper {
@@ -448,7 +449,7 @@ nav {
       min-width: 40%;
     }
     .form-textarea {
-      height: 55px;
+      // height: 55px;
       position: relative;
       resize: none;
       top: 30px;
@@ -463,6 +464,7 @@ nav {
     border: none;
     font-size: 50px;
     margin-top: 100px;
+    position: relative;
   }
   .form-submit:hover {
     color: $purple;
@@ -480,6 +482,21 @@ nav {
   .field-with-errors:-moz-placeholder  {
     color: $light-red;
   }
+  .paper-plane-wrapper {
+    height: 200px;
+    position: relative;
+    width: 100%;
+    .svg-lines, .svg-plane {
+      opacity: 0;
+      left: 0;
+      position: absolute;
+      top: 50px;
+    }
+    .svg-plane {
+      left: -350px;
+    }
+  }
+
   @media(max-width: 992px) {
     .form {
       font-size: 30px;
@@ -803,3 +820,12 @@ footer {
     margin-top: 200px;
   }
 }
+
+
+// .testy {
+//   background-color: orange;
+//   position: absolute;
+//   left: 100px;
+//   height: 50px;
+//   width: 50px;
+// }

@@ -22,6 +22,48 @@ $(document).on('turbolinks:load', function() {
         emailInput.css("border-bottom", "1px dashed #505050");
     });
 
+    // TweenMax.to($("svg"), 1, { opacity: 1 })
+    // TweenMax.to($("svg path"), 4, { strokeDashoffset: 0, delay: 2 })
+    // TweenMax.to($(".paper-plane-mask"), 3, { left: "100%", width: 0, delay: 2 })
+
+    // var pathString = "M6.044,73.835c0,0 68.026,-38.204 186.291,-36.833c90.058,1.045 132.836,32.117 157.582,51.596c47.589,37.458 10.037,66.43 -9.357,65.595c-15.835,-0.681 -44.514,-14.884 -31.322,-44.376c35.135,-78.553 158.913,-91.491 278.881,-37.206c67.246,30.428 165.956,50.908 245.957,-66.278";
+    // var arrayPath = [];
+    // // Snap SVG method to create a set of cubic bezier curves from the path string
+    // var newPath = Snap.path.toCubic(pathString);
+    // function setUpPoint(segment){
+    // 	//using +=2 in the loop thanks to GSAP's Geek Ambassador, animation superhero Carl Schooff :D
+    // 	for(var i = 0; i < segment.length; i+=2){
+    // 		//create a new object for the point so it can be passed into the bezier plugin
+    // 		var point = {};
+    // 		point.x = segment[i];
+    // 		point.y = segment[i+1];
+    // 		//add the point to the array
+    // 		arrayPath.push(point);
+    //     $("#log").append("{x:" + point.x +",y:" + point.y + "}, ");
+    // 	}//loop end
+    // }
+    // // loop through the curves collection
+    // for(var i = 0; i < newPath.length; i++){
+    // 	var segment = newPath[i],
+    // 			point;
+    // 	// the first element returned in the array is a letter, quite useless for the bezier Plugin, so we remove it
+    // 	segment.shift();
+    // 	//call the function to set up the points based on the segment returned
+    // 	point = setUpPoint(segment);
+    // }
+    // console.log(arrayPath)
+
+    // if($(window).width() >= 992) {
+    //   var array = [{x:6.044,y:73.835}, {x:6.044,y:73.835}, {x:74.07,y:35.63099999999999}, {x:192.335,y:37.001999999999995}, {x:282.39300000000003,y:38.047}, {x:325.17100000000005,y:69.119}, {x:349.91700000000003,y:88.59799999999998}, {x:397.50600000000003,y:126.05599999999998}, {x:359.954,y:155.028}, {x:340.56000000000006,y:154.19299999999998}, {x:324.7250000000001,y:153.51199999999997}, {x:296.04600000000005,y:139.30899999999997}, {x:309.23800000000006,y:109.81699999999998}, {x:344.37300000000005,y:31.26399999999998}, {x:468.15100000000007,y:18.32599999999998}, {x:588.119,y:72.61099999999998}, {x:655.365,y:103.03899999999997}, {x:754.075,y:123.51899999999998}, {x:864.076,y:-60.33299999999997}];
+    // } else {
+    //   var array = [{x:6.044,y:73.835}, {x:6.044,y:73.835}, {x:74.07,y:35.63099999999999}, {x:192.335,y:37.001999999999995}, {x:282.39300000000003,y:38.047}, {x:325.17100000000005,y:69.119}, {x:349.91700000000003,y:88.59799999999998}, {x:397.50600000000003,y:126.05599999999998}, {x:359.954,y:155.028}, {x:340.56000000000006,y:154.19299999999998}, {x:324.7250000000001,y:153.51199999999997}, {x:296.04600000000005,y:139.30899999999997}, {x:309.23800000000006,y:109.81699999999998}, {x:344.37300000000005,y:31.26399999999998}, {x:468.15100000000007,y:18.32599999999998}, {x:588.119,y:72.61099999999998}, {x:655.365,y:103.03899999999997}, {x:754.075,y:123.51899999999998}, {x:790.076,y:-60.33299999999997}];
+    // }
+    //
+    // var paperPlaneTL = new TimelineLite()
+    //           .to($("svg"), 1, { opacity: 1 })
+    //           .to($("svg #plane"), 2, { strokeDashoffset: 0 })
+    //           .to($(".svg-plane"), 3, { bezier:{ type:"cubic", values: array, autoRotate: 45 }, ease: Power1.easeIn }, "-=2")
+    //           .to($("svg #trail"), 5, { strokeDashoffset: 0 }, "-=2.15");
   })();
 
 
@@ -88,48 +130,51 @@ $(document).on('turbolinks:load', function() {
   })();
   // MouseWheel SmoothScroll
   (function(){
-    if(location.pathname != '/jewelries') {
-  		var $window = $(window);
-  		var isTweening = false;
-  		document.onmousewheel = function(){ customScroll(); }
-  		if(document.addEventListener){
-  		    document.addEventListener('DOMMouseScroll', customScroll, false);
-  		}
-  		function customScroll(event){
-  		   var delta = 0;
-  		   if (!event){
-  			   event = window.event;
-  		   }
-  		   if (event.wheelDelta) {
-  			   delta = event.wheelDelta/120;
-  		   } else if(event.detail) {
-  			   delta = -event.detail/3;
-  		   }
-  		   if (delta){
-  			      var scrollTop = $window.scrollTop();
-  				   	var finScroll = scrollTop - parseInt(delta*100) * 3;
-  				   	TweenMax.to($window, 0.7, {
-  					   	scrollTo : { y: finScroll, autoKill:true },
-  					   	ease: Power4.easeOut,
-  					   	autoKill: true,
-  					   	overwrite: 5,
-  					   	onComplete: function(){
-  					   		//console.log(isTweening);
-  					   	}
-  					});
-  		   }
-  		   if (event.preventDefault){
-  			   event.preventDefault();
-  		   }
-  		   event.returnValue = false;
-  		}
-    } else {
-      document.onmousewheel = function(){ normalScroll(); }
-      if(document.addEventListener){
-  		    document.addEventListener('DOMMouseScroll', normalScroll, false);
-  		}
-      function normalScroll() {
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+    if(!isFirefox) {
+      if(location.pathname != '/jewelries') {
+    		var $window = $(window);
+    		var isTweening = false;
+    		document.onmousewheel = function(){ customScroll(); }
+    		if(document.addEventListener){
+    		    document.addEventListener('DOMMouseScroll', customScroll, false);
+    		}
+    		function customScroll(event){
+    		   var delta = 0;
+    		   if (!event){
+    			   event = window.event;
+    		   }
+    		   if (event.wheelDelta) {
+    			   delta = event.wheelDelta/120;
+    		   } else if(event.detail) {
+    			   delta = -event.detail/3;
+    		   }
+    		   if (delta){
+    			      var scrollTop = $window.scrollTop();
+    				   	var finScroll = scrollTop - parseInt(delta*100) * 3;
+    				   	TweenMax.to($window, 0.7, {
+    					   	scrollTo : { y: finScroll, autoKill:true },
+    					   	ease: Power4.easeOut,
+    					   	autoKill: true,
+    					   	overwrite: 5,
+    					   	onComplete: function(){
+    					   		//console.log(isTweening);
+    					   	}
+    					});
+    		   }
+    		   if (event.preventDefault){
+    			   event.preventDefault();
+    		   }
+    		   event.returnValue = false;
+    		}
+      } else {
+        document.onmousewheel = function(){ normalScroll(); }
+        if(document.addEventListener){
+    		    document.addEventListener('DOMMouseScroll', normalScroll, false);
+    		}
+        function normalScroll() {
 
+        }
       }
     }
 	})();
